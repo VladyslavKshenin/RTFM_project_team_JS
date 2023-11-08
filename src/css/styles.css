@@ -8,17 +8,61 @@
 @import url('./header.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  /*Font*/
+    --primary-font: "DM Sans",
+      sans-serif;
+      
+        /* Other */
+        
+          font-synthesis: none;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-text-size-adjust: 100%;
+
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url(../fonts/DMSans-Medium.woff2) format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url(../fonts/DMSans-RegularItalic.woff2) format('woff2');
   font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+@font-face {
+  font-family: 'DM Sans';
+  src: url(../fonts/DMSans-Bold.woff2) format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+@font-face {
+  font-family: 'DM Sans';
+  src: url(../fonts/DMSans-Regular.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Base style */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
