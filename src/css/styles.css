@@ -6,11 +6,27 @@
 */
 @import url('./reset.css');
 @import url('./header.css');
+@import url('./category-sidebar.css');
+@import url('./content-home.css');
+@import url('./content-shopping.css');
+@import url('./mobile-window.css');
+@import url('./modal-window.css');
+@import url('./support-sidebar.css');
 
 :root {
   /*Font*/
     --primary-font: "DM Sans",
       sans-serif;
+      /* Сolors */
+      --black: #111;
+      --black-one: #202024;
+      --violet: #4F2EE8;
+      --yellow: #EAC645;
+      --white: #fff;
+      --background-body-light: #F6F6F6;
+      --background-body-dark: #202024;
+      
+
       
         /* Other */
         
