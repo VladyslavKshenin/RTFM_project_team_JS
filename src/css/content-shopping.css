@@ -1,0 +1,99 @@
+.shopping-list-section {
+    background-color: var(--background-body-light);
+}
+
+.shopping-list-title {
+    padding: 40px 0 40px 20px;
+
+    color: var(--black);
+    font-family: var(--primary-font);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 118%;
+    letter-spacing: -1.28px;
+}
+
+@media only screen and (min-width: 768px) {
+    .shopping-list-title {
+        padding: 40px 0 40px 32px;
+
+        font-size: 48px;
+        line-height: 108%;
+        letter-spacing: -1.92px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .shopping-list-title {
+        padding: 40px 0 40px 20px;
+    }
+}
+
+.shopping-list-title-part {
+    color: var(--violet);
+}
+
+.shopping-list-container {
+    min-width: 320px;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .shopping-list-container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .shopping-list-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.shopping-list-text {
+    max-width: 100%;
+    padding-bottom: 14px;
+
+    color: rgba(0, 0, 0, 0.60);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 128%;
+    letter-spacing: -0.28px;
+}
+
+@media only screen and (min-width: 768px) {
+    .shopping-list-text {
+        padding-bottom: 20px;
+
+        font-size: 18px;
+        line-height: 133%;
+        letter-spacing: -0.36px;
+    }
+}
+
+.shopping-list-image {
+    max-width: 100%;
+    height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .shopping-list-image {
+        width: 322px;
+        height: 241px;
+    }
+}
