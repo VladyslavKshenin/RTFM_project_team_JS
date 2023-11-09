@@ -1,5 +1,7 @@
 const BASE_URL = 'https://books-backend.p.goit.global/books';
 
+const ctgList = document.querySelector('.ctg-list');
+
 const API_OPTIONS = {
   list: 'category-list',
   top: 'top-books',
@@ -32,4 +34,16 @@ async function fetchBookById(bookId) {
   }
 }
 
-export default { API_OPTIONS, fetchBookList, fetchBookById };
+export default { API_OPTIONS, fetchBookList, fetchBookById, fetchCategories };
+
+// Alina Stadnyk // Sidebar cagegories
+
+function fetchCategories() {
+  return fetch(`${BASE_URL}/category-list`).then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return response.json();
+  });
+}
+export { fetchCategories };
