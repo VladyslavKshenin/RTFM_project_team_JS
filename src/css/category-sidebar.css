@@ -1,6 +1,8 @@
+/* Mobile basic tyles */
+
 .ctg-container {
-  width: 356px;
-  height: 472px;
+  width: 335px;
+  height: 228px;
   list-style: none;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -10,15 +12,23 @@
   flex-direction: column;
   background: #f6f6f6;
 }
+.ctg-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
+  align-items: stretch;
+  margin-right: 20px;
+}
 .ctg-item {
+  width: 307px;
+  height: 18px;
   color: rgba(17, 17, 17, 0.6);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
-  letter-spacing: -0.36px;
-  width: 318px;
-  height: 24px;
+  line-height: 18px;
+  letter-spacing: -0.32px;
+
   cursor: pointer;
 }
 .ctg-item:hover {
@@ -29,15 +39,6 @@
   text-transform: uppercase;
 }
 
-.ctg-list {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-
-  align-items: stretch;
-  margin-right: 20px;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -45,4 +46,28 @@
 ::-webkit-scrollbar-thumb {
   border-radius: 12px;
   background: #e0e0e0;
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) {
+  .ctg-container {
+    width: 337px;
+    height: 472px;
+  }
+  .ctg-list {
+    gap: 32px;
+  }
+  .ctg-item {
+    width: 337px;
+    height: 24px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.36px;
+  }
+}
+/* Desktop styles */
+@media screen and (min-width: 1440px) {
+  .ctg-container {
+    width: 356px;
+  }
 }

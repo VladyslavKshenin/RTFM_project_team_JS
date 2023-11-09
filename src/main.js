@@ -13,7 +13,3 @@ fetchCategories().then(response => {
     .join('');
   ctgList.insertAdjacentHTML('beforeend', markup);
 });
-
-// function selectCtg(evt) {
-//   const selectedCategory = evt.target.innerText;
-// }
