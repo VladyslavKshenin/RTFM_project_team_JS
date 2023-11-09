@@ -1,0 +1,396 @@
+.backdrop {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #ffffff;
+    z-index: 10;
+
+    position: fixed;
+    background: rgb(46, 47, 66, 0.4);
+    transition-property: visibility, opacity;
+}
+
+@media only screen and (max-width: 374px) {
+    .backdrop-window {
+        max-width: 100%;
+    }
+
+    .modal-img {
+        max-width: 287px;
+        height: 408px;
+    }
+
+    .modal-btn {
+        display: flex;
+        align-items: center;
+
+        padding: 14px 22px;
+
+        background-color: #ffffff;
+        min-width: 211px;
+        border-radius: 40px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        color: #111111;
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: auto;
+        text-transform: uppercase;
+        border-color: #4f2ee8;
+    }
+
+    .backdrop-window {
+        position: absolute;
+        min-width: 320px;
+        max-width: 335px;
+        height: auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 18px;
+        padding: 40px 24px;
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        border: solid #000;
+    }
+
+    .btn-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+    }
+
+    .prg-final {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 1.2;
+        letter-spacing: -0.04em;
+        text-align: center;
+        color: #11111180;
+        padding: 0 20px;
+        margin-top: 8px;
+    }
+
+    .modal-title {
+        font-weight: 700;
+        font-size: 16px;
+        color: #111111;
+        letter-spacing: -0.4;
+        margin-top: 14px;
+    }
+
+    .modal-prg {
+        font-family: dm_sansitalic;
+        font-style: italic;
+        color: #b4afaf;
+        font-weight: 400;
+        font-size: 12px;
+        margin-top: 4px;
+        letter-spacing: -0.4;
+    }
+
+    .modal-prgtho {
+        margin-top: 18px;
+        margin-bottom: 10px;
+        font-family: DM Sans;
+        font-size: 14px;
+
+        letter-spacing: -0.4;
+        font-weight: 400;
+        color: #111111;
+    }
+
+    .links-list {
+        display: flex;
+        align-items: center;
+
+        justify-content: center;
+        flex-direction: row;
+        gap: 20px;
+        margin-bottom: 10px;
+    }
+
+    .modal-btn {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .icon-close {
+        stroke: #111111;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    .backdrop-window {
+        position: absolute;
+        width: 335px;
+        max-height: 762px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 18px;
+        padding: 40px 24px;
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        border: solid #000;
+    }
+
+    .modal-img {
+        width: 287px;
+        height: 408px;
+    }
+
+    .modal-btn {
+        display: flex;
+        align-items: center;
+
+        padding: 14px 22px;
+
+        background-color: #ffffff;
+        min-width: 211px;
+        border-radius: 40px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        color: #111111;
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: auto;
+        text-transform: uppercase;
+        border-color: #4f2ee8;
+    }
+
+    .prg-final {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 1.2;
+        letter-spacing: -0.04em;
+        text-align: center;
+        color: #11111180;
+        padding: 0 20px;
+        margin-top: 8px;
+    }
+
+
+    .btn-close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .icon-close:hover,
+    .icon-close:focus {
+        stroke: #4f2ee8;
+    }
+
+    .section-one {
+        margin-left: 0;
+
+        color: #b4afaf;
+    }
+
+    .modal-title {
+        font-weight: 700;
+        font-size: 16px;
+        color: #111111;
+        letter-spacing: -0.4;
+        margin-top: 14px;
+    }
+
+    .modal-prg {
+        font-family: dm_sansitalic;
+        font-style: italic;
+        color: #b4afaf;
+        font-weight: 400;
+        font-size: 12px;
+        margin-top: 4px;
+        letter-spacing: -0.4;
+    }
+
+    .modal-prgtho {
+        margin-top: 18px;
+        font-family: DM Sans;
+        font-size: 14px;
+
+        letter-spacing: -0.4;
+        font-weight: 400;
+        color: #111111;
+    }
+
+    .button-submit {
+        margin-top: 40px;
+    }
+
+    .modal-links {
+        margin-top: 14px;
+    }
+
+    .links-list {
+        display: flex;
+        align-items: center;
+
+        justify-content: flex-start;
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .backdrop-window {
+        position: absolute;
+        width: 579px;
+        max-height: 806px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 18px;
+        padding: 40px;
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        border: solid #000;
+    }
+
+    .modal-book {
+        display: flex;
+    }
+
+    .modal-img {
+        width: 192px;
+        height: 281px;
+        margin: 0;
+    }
+
+    .icon-close {
+        stroke: #111111;
+    }
+
+    .modal-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+
+        background-color: #ffffff;
+        width: 499px;
+        border-radius: 40px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.33;
+        letter-spacing: -0.01em;
+        color: #111111;
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: auto;
+        text-transform: uppercase;
+        border-color: #4f2ee8;
+    }
+
+    .modal-btn:hover,
+    .modal-btn:focus {
+        background-color: #4f2ee8;
+        color: #fff;
+    }
+
+    .prg-final {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.16;
+        letter-spacing: -0.04em;
+        text-align: center;
+        color: #11111180;
+
+        margin-top: 8px;
+    }
+
+    .btn-close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6px;
+
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .section-one {
+        margin-left: 24px;
+
+        color: #b4afaf;
+    }
+
+    .modal-title {
+        font-weight: 700;
+        font-size: 24px;
+        color: #111111;
+        letter-spacing: -0.04em;
+        margin-top: 0;
+        line-height: 1.16;
+        width: 200px;
+    }
+
+    .modal-prg {
+        font-family: dm_sansitalic;
+        font-style: italic;
+        color: #b4afaf;
+        font-weight: 400;
+        font-size: 18px;
+        margin-top: 8px;
+        line-height: 1.28;
+        letter-spacing: -0.04em;
+    }
+
+    .modal-prgtho {
+        margin-top: 20px;
+        font-family: DM Sans;
+        font-size: 18px;
+        line-height: 1.28;
+        letter-spacing: -0.04em;
+        font-weight: 400;
+        color: #111111;
+    }
+
+    .button-submit {
+        margin-top: 40px;
+    }
+
+    .modal-links {
+        margin-top: 20px;
+    }
+
+    .links-list.list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        flex-direction: row;
+    }
+}
+
+.btn-close:hover .icon-close,
+.btn-close:focus .icon-close {
+    fill: #4f2ee8;
+}

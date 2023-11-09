@@ -1,0 +1,110 @@
+.light-theme {
+    --main-color: #f6f6f6;
+    --text-color: #111111;
+    --second-text-color: rgba(17, 17, 17, 0.6);
+    --header-bac-col: #fff;
+    --logo-text-color: #000000;
+    --hover-color: #4f2ee8;
+    --registr-window-col: #111;
+    --registr-window-btn-col: #f3f3f3;
+    --registr-window-btn-second-col: rgba(17, 17, 17, 0.5);
+    --scrollbar-color: #e0e0e0;
+}
+
+.dark-theme {
+    --main-color: #202024;
+    --text-color: #fff;
+    --second-text-color: rgba(255, 255, 255, 0.6);
+    --header-bac-col: #111;
+    --logo-text-color: #f3f3f3;
+    --hover-color: #eac645;
+    --registr-window-col: #f6f6f6;
+    --registr-window-btn-col: #202024;
+    --registr-window-btn-second-col: rgba(246, 246, 246, 0.5);
+    --scrollbar-color: rgba(17, 17, 17, 0.6);
+}
+
+body {
+    background-color: #111111;
+}
+
+header.header {
+    padding: 14px 0;
+    background-color:#fff;
+    border-color: #111;
+}
+
+div.shopping-card {
+    background-color: #fff;
+}
+
+h3.card-title,
+a.menu-link,
+h1.category-name,
+p.book-card-description,
+h3.item-title,
+button.seemorebtn,
+h2.book-name,
+h2.modal-title,
+p.modal-prgtho,
+button.modal-btn,
+h1.shopping-list-header,
+h3.card-title,
+p.book-card-description {
+    color: #111;
+}
+
+li.categories-item,
+p.prg-final,
+p.shop-list-text {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+li.categories-item-current {
+    color: #eac645;
+}
+
+.categories-container::-webkit-scrollbar-thumb {
+    background-color: rgba(17, 17, 17, 0.6);
+}
+
+div.backdrop-window {
+    background-color: #202024;
+    border-color: #fff;
+}
+
+button.modal-btn {
+    background-color: #202024;
+    border: 2px solid #4f2ee8;
+}
+
+svg.icon-close,
+a.menu-link svg,
+button.mob-menu {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 4px;
+}
+
+div.shopping-card {
+    background-color: #111;
+}
+
+div.registration-window,
+input.form-input {
+    background-color: #202024;
+    border-color: #f6f6f6;
+}
+
+input.form-input::placeholder {
+    color: #f6f6f6;
+}
+
+button.form-main-btn {
+    background-color: #f6f6f6;
+    color: #202024;
+}
+
+div.form-btns button {
+    color: rgba(246, 246, 246, 0.5);
+}
