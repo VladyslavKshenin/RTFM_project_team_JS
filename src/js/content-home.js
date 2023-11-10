@@ -1,5 +1,7 @@
 import api from './books-api';
 import markup from './markup';
+const wrapper = document.querySelector('.book-collection-wrapper');
+const allCtg = document.querySelector('.js-ctg-head');
 
 async function topBooks() {
   const topBooks = await api.fetchBookList(api.API_OPTIONS.top);
@@ -8,26 +10,32 @@ async function topBooks() {
 }
 
 topBooks();
-
-const homeSection = document.querySelector('.home-container');
+console.log(topBooks());
+// const homeSection = document.querySelector('.home-container');
 const ctgList = document.querySelector('.ctg-list');
 const ctgName = document.querySelector('.selected-ctg-name');
 console.log(ctgName);
-import { API_OPTIONS, fetchBookList } from './books-api';
+// import { API_OPTIONS, fetchBookList } from './books-api';
 
 ctgList.addEventListener('click', selectCtg);
+allCtg.addEventListener('click', renderTopBooks);
+function renderTopBooks() {
+  wrapper.innerHTML = '';
+  topBooks();
+}
+
 function selectCtg(evt) {
   const selectedCategory = evt.target.childNodes[0].data;
 
-  console.dir(selectedCategory);
-  fetchBookList(API_OPTIONS.category, selectedCategory).then(response => {
-    console.log(response);
-    ctgName.innerHTML = '';
-    homeSection.innerHTML = '';
-    const markup = response
-      .map(
-        ({ book_image, author, title }) => `<div class="ctg-top-books">
- 
+  api
+    .fetchBookList(api.API_OPTIONS.category, selectedCategory)
+    .then(response => {
+      ctgName.innerHTML = '';
+      wrapper.innerHTML = '';
+      const markup = response
+        .map(
+          ({ book_image, author, title }) => `<div class="ctg-top-books">
+
   <div class="ctg-book-card">
     <img class = 'ctg-book-image' src="${book_image}" alt="${title}" />
     <div class = 'ctg-book-text'>
@@ -37,9 +45,9 @@ function selectCtg(evt) {
   </div>
 </div>
 `
-      )
-      .join('');
-    ctgName.insertAdjacentHTML('afterbegin', selectedCategory);
-    homeSection.insertAdjacentHTML('beforeend', markup);
-  });
+        )
+        .join('');
+      ctgName.insertAdjacentHTML('afterbegin', selectedCategory);
+      wrapper.insertAdjacentHTML('beforeend', markup);
+    });
 }

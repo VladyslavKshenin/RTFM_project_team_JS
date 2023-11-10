@@ -33,5 +33,5 @@ async function fetchBookById(bookId) {
 }
 
 export default { API_OPTIONS, fetchBookList, fetchBookById };
-export { API_OPTIONS };
-export { fetchBookList };
+// export { API_OPTIONS };
+// export { fetchBookList };

@@ -1,8 +1,8 @@
-.content-home-section {
+.book-collection-wrapper {
   display: flex;
   flex-direction: column-reverse;
 }
-.home-container {
+.book-collection-wrapper {
   min-width: 320px;
   max-width: 375px;
 
@@ -15,14 +15,14 @@
 }
 /* Tablet styles */
 @media screen and (min-width: 768px) {
-  .home-ontainer {
+  .book-collection-wrapper {
     max-width: 768ps;
     padding: 0 32px;
   }
 }
 /* Desktop styles */
 @media screen and (min-width: 1440px) {
-  .home-container {
+  .book-collection-wrapper {
     max-width: 1440px;
     padding: 24px;
   }
