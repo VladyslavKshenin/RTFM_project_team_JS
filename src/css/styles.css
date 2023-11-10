@@ -82,3 +82,26 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+/* Common Style */
+.container {
+  min-width: 320px;
+  max-width: 375px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/*  tablet screen */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+/*  desktop screen */
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 32px;
+  }
+}
