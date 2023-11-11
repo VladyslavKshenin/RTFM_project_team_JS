@@ -4,7 +4,7 @@
 
 .support-container {
     border-radius: 16px;
-    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--violet) 18.03%, var(--white) 100%);
     box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.10);
     width: 335px;
     height: 460px;
@@ -26,8 +26,7 @@
 }
 
 .support-title {
-    color: #FFF;
-    font-family: DM Sans;
+    color: var(--white);
     font-size: 22px;
     line-height: 1.09;
     letter-spacing: -0.88px;
@@ -49,7 +48,7 @@
 
 .support-coat-of-arms {
     display: block;
-    fill: #FFFFFF;
+    fill: var(--white);
 }
 
 .support-list {
@@ -66,7 +65,7 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background-color: #FFFFFF;
+    background-color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,16 +85,80 @@
 
 .support-button {
     width: 100%;
-    fill: #4F2EE8;
-}
-
-.support-arrow-up {
-    display: none;
+    fill: var(--violet);
 }
 
 .support-link {
-    color: white;
+    color: var(--white);
     display: flex;
     align-items: center;
     gap: 16px;
 }
+
+/**
+  |============================
+  | Home. Розташування 2 секцій як на макеті.
+  |============================
+*/
+
+/* .ctg-item:focus {
+    color: var(--violet);
+    font-weight: 700;
+    text-transform: uppercase;
+} */
+
+/* .header {
+    margin-bottom: 40px;
+}
+
+.ctg-sidebar {
+    margin-bottom: 40px;
+}
+
+.support-container {
+    margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+    .sidebar-home-section {
+        display: flex;
+        gap: 32px;
+        margin-bottom: 100px;
+    }
+    .ctg-sidebar {
+       margin-bottom: 0px;
+    }
+
+    .support-container {
+       margin-bottom: 0px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .sidebar-home-section {
+        display: block;
+        margin-bottom: 0px;
+    }
+
+    .ctg-sidebar {
+        margin-bottom: 86px;
+    }
+
+    .container {
+        display: flex;
+        gap: 40px;
+        justify-content: start;
+    }
+}
+
+.shopping-sidebar-section {
+    display: none;
+}
+
+@media only screen and (min-width: 1440px) {
+    .shopping-sidebar-section {
+        display: none;
+    }
+} */
+
+
