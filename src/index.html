@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bookshelf</title>
-    <!--Normalize-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
-      rel="stylesheet"
-    />
-    <!--Custom styles-->
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <load scr="partials/header.html" />
-    <!-- Main Block -->
-    <main>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookshelf</title>
+  <!--Normalize-->
+  <link href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css" rel="stylesheet" />
+  <!--Custom styles-->
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <load scr="partials/header.html" />
+  <!-- Main Block -->
+  <main>
+    <div class="container">
       <!-- Sidebar -->
       <section class="sidebar-home-section">
         <load scr="partials/category-sidebar.html" />
 
         <load scr="partials/support-sidebar.html" />
       </section>
+
       <!-- Content -->
       <section class="content-home-section">
         <load scr="partials/content-home.html" />
       </section>
-    </main>
+    </div>
+  </main>
 
-    <script type="module" src="/main.js"></script>
-  </body>
+  <script type="module" src="/index.js"></script>
+</body>
+
 </html>
