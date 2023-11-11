@@ -42,4 +42,27 @@ function insertCategoryBlocks(category) {
   );
 }
 
+
+// Support Ukraine 
+export function createMarkup(arr) {
+
+    return arr.map(({id, title, url, img, img2x }) => `
+        <li class="support-items">
+            <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
+                <span>0${id}</span>
+                <img class="support-img" src="${img}" alt="${title}" srcset="${img} 1x, ${img2x} 2x">
+            </a>
+        </li>
+        `)
+    .join('');
+    
+}
+
+
+
+
+
+
+
+
 export default { insertCategoryBlocks };
