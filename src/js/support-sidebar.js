@@ -12,8 +12,8 @@ arrowUp.addEventListener('click', handlerUp);
 let i = 0;
 supportItems.forEach(element => {
     element.id = i + 1;
-    element.img = `../images/support/img-${i + 1}@1x.png`;
-    element.img2x = `../images/support/img-${i + 1}@2x.png`;
+    // element.img = `../images/support/img-${i + 1}@1x.png`;
+    // element.img2x = `../images/support/img-${i + 1}@2x.png`;
     i += 1;
 })
 
