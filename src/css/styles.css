@@ -82,3 +82,35 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+/* Common Style */
+.container {
+  min-width: 320px;
+  max-width: 375px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/*  tablet screen */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+/*  desktop screen */
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 32px;
+  }
+}
+
+body {
+  background-color: var(--background-body-light);
+  color: var(--black);
+  font-family: DM Sans;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.56px;
+}
