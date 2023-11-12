@@ -1,3 +1,5 @@
+import logo from "./../images/icons.svg"
+console.dir(`${logo}#icon-del`);
 const objectCard = [
   {
     sebel: "sdfsdfsdf",
@@ -78,7 +80,7 @@ function funCreateCard(readyCard) {
         <div>
           <button class="btn-shop shopping-list-card-container-trash" id="${index}">
             <svg class="shopping-list-card-icon-trash" width="18px" height="18px">
-              <use href="./images/icons.svg#icon-del"></use>
+              <use href="${logo}#icon-del"></use>
             </svg>
           </button>
         </div>
