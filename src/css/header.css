@@ -185,7 +185,7 @@
 
 .header-modal {
     position: absolute;
-    top: -45px;
+    top: -58px;
     right: -20.5px;
     width: 100%;
     width: 375px;
@@ -337,6 +337,8 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
 .header-box {
     display: flex;
     justify-content: space-between;
+    height: 72px;
+    align-items: center;
 }
 
 .label-them {
