@@ -270,6 +270,7 @@
 
     background-color: var(--violet);
     width: 28px;
+    border: none;
     height: 28px;
     flex-shrink: 0;
     border-radius: 50%;
