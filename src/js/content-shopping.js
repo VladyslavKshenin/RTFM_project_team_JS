@@ -17,7 +17,6 @@ const objectCard = [
 ];
 localStorage.setItem("localCard", JSON.stringify(objectCard));
 
-
 const KEY_LOCAL_STORAGE = "localCard";//сюди треба ключ з вебсховища(який буде в модалці створений)
 const shopEl = document.querySelector(".js-shopping-list");
 const readyCard = parseStorage(KEY_LOCAL_STORAGE);
@@ -76,13 +75,13 @@ function funCreateCard(readyCard) {
             </a>
           </div>
         </div>
-
+        <div>
           <button class="btn-shop shopping-list-card-container-trash" id="${index}">
             <svg class="shopping-list-card-icon-trash" width="18px" height="18px">
               <use href="./images/icons.svg#icon-del"></use>
             </svg>
           </button>
-
+        </div>
       </div>
     </li>
   `;
