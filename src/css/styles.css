@@ -98,7 +98,7 @@
 /*  desktop screen */
 @media only screen and (min-width: 1440px) {
   .container {
-    display: flex;
+    /* display: flex; */
     max-width: 1440px;
     padding: 0 24px;
   }
