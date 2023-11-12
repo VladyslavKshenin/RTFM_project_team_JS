@@ -18,6 +18,14 @@ supportItems.forEach(element => {
 
 supportList.insertAdjacentHTML('afterbegin', createMarkup(supportItems));
 
+const imgSrc = supportItems.map(src => src.img);
+
+const img = document.querySelectorAll('.support-img');
+
+for (let i = 0; i < 9; i += 1) {
+  img[i].src = imgSrc[i];
+}
+
 function handlerDown() {
   arrowDown.classList.toggle('visually-hidden');
   arrowUp.classList.toggle('visually-hidden');
