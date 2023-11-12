@@ -272,6 +272,7 @@
     border: none;
     width: 28px;
     height: 28px;
+    border: none;
     flex-shrink: 0;
     border-radius: 50%;
     display: flex;

@@ -29,7 +29,7 @@ if (readyCard[0] !== undefined) {
   funcCreateEmpty();
 }
 function deleteCadr(e) {
-  if (e.target.nodeName === "BUTTON" || e.target.nodeName === "svg" || e.target.nodeName === "use" ) {
+  if (e.target.nodeName === "BUTTON" || e.target.nodeName === "svg" || e.target.nodeName === "use") {
   shopEl.innerHTML = "";
   readyCard.splice(e.target.id, 1);
   localStorage.removeItem(KEY_LOCAL_STORAGE);
