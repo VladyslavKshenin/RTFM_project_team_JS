@@ -4,6 +4,7 @@ const API_OPTIONS = {
   list: 'category-list',
   top: 'top-books',
   category: 'category?category=',
+  id: '',
 };
 
 async function fetchBookList(option, select = '') {

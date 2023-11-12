@@ -9,7 +9,7 @@ async function topBooks() {
 
 topBooks();
 
-// const homeSection = document.querySelector('.home-container');
+//const homeSection = document.querySelector('.home-container');
 const allCtg = document.querySelector('.js-ctg-heading');
 const ctgList = document.querySelector('.ctg-list');
 const ctgName = document.querySelector('.selected-ctg-name');
