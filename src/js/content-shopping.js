@@ -1,3 +1,21 @@
+const objectCard = [
+  {
+    sebel: "sdfsdfsdf",
+    sdfss: "sdfsdfsdf",
+    fdsdfsdfsdf: "sdfsdf",
+  },
+  {
+    sebel: "sdfsdfsdf",
+    sdfss: "sdfsdfsdf",
+    fdsdfsdfsdf: "sdfsdf",
+  },
+  {
+    sebel: "sdfsdfsdf",
+    sdfss: "sdfsdfsdf",
+    fdsdfsdfsdf: "sdfsdf",
+  },
+];
+localStorage.setItem("localCard", JSON.stringify(objectCard));
 
 const KEY_LOCAL_STORAGE = "localCard";//сюди треба ключ з вебсховища(який буде в модалці створений)
 const shopEl = document.querySelector(".js-shopping-list");
@@ -6,16 +24,12 @@ const readyCard = parseStorage(KEY_LOCAL_STORAGE);
 if (readyCard[0] !== undefined) {
   shopEl.innerHTML = "";
   shopEl.insertAdjacentHTML("afterbegin", funCreateCard(readyCard));
-  const btnDelEl = document.querySelector(".btnDelet");
   shopEl.addEventListener("click", deleteCadr);
 } else {
   funcCreateEmpty();
 }
-shopEl.insertAdjacentHTML("afterbegin",`<svg class="shopping-list-card-icon-trash" width="12px" height="12px">
-<use href="${logo}#icon-del"></use>
-</svg>`);
 function deleteCadr(e) {
-  if (e.target.nodeName === "BUTTON" || e.target.nodeName === "svg" ) {
+  if (e.target.nodeName === "BUTTON" || e.target.nodeName === "svg" || e.target.nodeName === "use" ) {
   shopEl.innerHTML = "";
   readyCard.splice(e.target.id, 1);
   localStorage.removeItem(KEY_LOCAL_STORAGE);
@@ -61,9 +75,9 @@ function funCreateCard(readyCard) {
             </a>
           </div>
         </div>
-        <div class="shopping-list-card-container-trash">
-          <button class="btn-shop" id="${index}">
-            <svg class="shopping-list-card-icon-trash" width="12px" height="12px">
+        <div>
+          <button class="btn-shop shopping-list-card-container-trash" id="${index}">
+            <svg class="shopping-list-card-icon-trash" width="18px" height="18px">
               <use href="./images/icons.svg#icon-del"></use>
             </svg>
           </button>
