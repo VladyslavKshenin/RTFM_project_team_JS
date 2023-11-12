@@ -115,20 +115,20 @@ function renderCategoryBooks(books) {
 }
 
 // Support Ukraine
-export function createMarkup(arr) {
-  return arr
-    .map(
-      ({ id, title, url, img, img2x }) => `
-        <li class="support-items">
-          <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
-            <span>0${id}</span>
-            <img class="support-img" src="./images/support/${img}" srcset="./images/support/${img} 1x, ./images/support/${img2x} 2x" alt="${title}" >
-          </a>
-        </li>
-        `
-    )
-    .join('');
-} //srcset="${img} 1x, ${img2x} 2x" height="32" './images/support/img-1@1x.png'
+// export function createMarkup(arr) {
+//   return arr
+//     .map(
+//       ({ id, title, url, img, img2x }) => `
+//         <li class="support-items">
+//           <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
+//             <span>0${id}</span>
+//             <img class="support-img" src="./images/support/${img}" srcset="./images/support/${img} 1x, ./images/support/${img2x} 2x" alt="${title}" >
+//           </a>
+//         </li>
+//         `
+//     )
+//     .join('');
+// } //srcset="${img} 1x, ${img2x} 2x" height="32" './images/support/img-1@1x.png'
 
 
 export default { renderTopBooks, renderCategoryBooks, insertCategoryBlocks };
