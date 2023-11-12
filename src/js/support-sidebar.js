@@ -8,23 +8,37 @@ const arrowUp = document.querySelector('.support-arrow-up');
 arrowDown.addEventListener('click', handlerDown);
 arrowUp.addEventListener('click', handlerUp);
 
-let i = 0;
-supportItems.forEach(element => {
-  element.id = i + 1;
-  // element.img = `../images/support/img-${i + 1}@1x.png`;
-  // element.img2x = `../images/support/img-${i + 1}@2x.png`;
-  i += 1;
-});
+// let i = 0;
+// supportItems.forEach(element => {
+//   element.id = i + 1;
+//   // element.img = `../images/support/img-${i + 1}@1x.png`;
+//   // element.img2x = `../images/support/img-${i + 1}@2x.png`;
+//   i += 1;
+// });
+
+let id = 1;
+for (let i = 0; i < 9; i += 1) {
+  supportItems[i].id = id + i; 
+  supportItems[i].img = `img-${i + 1}@1x.png`;
+  supportItems[i].img2x = `img-${i + 1}@2x.png`;
+}
+
+
 
 supportList.insertAdjacentHTML('afterbegin', createMarkup(supportItems));
 
-const imgSrc = supportItems.map(src => src.img);
+// const imgSrc = supportItems.map(src => src.img);
 
-const img = document.querySelectorAll('.support-img');
+// const img = document.querySelectorAll('.support-img');
 
-for (let i = 0; i < 9; i += 1) {
-  img[i].src = imgSrc[i];
-}
+// for (let i = 0; i < 9; i += 1) {
+//   img[i].src = imgSrc[i];
+// }
+
+
+
+
+
 
 function handlerDown() {
   arrowDown.classList.toggle('visually-hidden');
