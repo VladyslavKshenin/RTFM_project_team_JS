@@ -1,5 +1,10 @@
 import logo from "./../images/icons.svg"
-
+import emptyDesk1 from './../images/shopping-list-images/books-desk@1x.png';
+import emptyDesk2 from './../images/shopping-list-images/books-desk@2x.png';
+import emptyMob1 from './../images/shopping-list-images/books-mob@1x.png';
+import amazonCard from './../images/shopping-list-images/image 1.png';
+import bookCard from './../images/shopping-list-images/image 2.png';
+console.log(amazonCard);
 const objectCard = [
   {
     sebel: "sdfsdfsdf",
@@ -74,8 +79,8 @@ function funCreateCard(readyCard) {
           <p class="shopping-list-card-author">Harlan Coben</p>
           <div class="shopping-list-card-container-img">
             <a href="">
-              <img class="shopping-list-card-icon-amazon" src="" alt="amazon-icon">
-              <img class="shopping-list-card-icon-book" src="" alt="book-icon">
+              <img class="shopping-list-card-icon-amazon" src="${amazonCard}" alt="amazon-icon">
+              <img class="shopping-list-card-icon-book" src="${bookCard}" alt="book-icon">
             </a>
           </div>
         </div>
@@ -103,10 +108,10 @@ function funcCreateEmpty() {
     <img
       class="shopping-list-image"
       srcset="
-        ./images/shopping-list-images/books-desk@1x.png 1x,
-        ./images/shopping-list-images/books-desk@2x.png 2x
+        ${emptyDesk1} 1x,
+        ${emptyDesk2} 2x
       "
-      src="./images/shopping-list-images/books-mob@1x.png"
+      src="${emptyMob1}"
       alt="books"
       width="265"
       height="198"
