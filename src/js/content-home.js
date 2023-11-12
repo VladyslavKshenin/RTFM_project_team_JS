@@ -6,9 +6,9 @@ const refs = getRefs();
 
 api.fetchBookList(api.API_OPTIONS.top).then(markup.renderTopBooks);
 
-function showSelectedCategoryBooks(evt) {
-  const selectedCategory = evt.target.childNodes[0].data;
-  console.dir(evt.target);
+function showSelectedCategoryBooks(event) {
+  const selectedCategory = event.target.childNodes[0].data;
+  console.dir(event.target);
   console.log(selectedCategory);
   if (selectedCategory !== 'All categories') {
     api
@@ -19,4 +19,15 @@ function showSelectedCategoryBooks(evt) {
   }
 }
 
+function showMoreCategoryBooks(event) {
+  if (!event.target.classList.contains('top-books-button')) {
+    return;
+  }
+  const category = event.target.dataset.category;
+  api
+    .fetchBookList(api.API_OPTIONS.category, category)
+    .then(markup.renderCategoryBooks);
+}
+
 refs.ctgList.addEventListener('click', showSelectedCategoryBooks);
+refs.bookCollectionWrapper.addEventListener('click', showMoreCategoryBooks);
