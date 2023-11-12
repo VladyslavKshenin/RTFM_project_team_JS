@@ -1,5 +1,5 @@
 import logo from "./../images/icons.svg"
-console.dir(`${logo}#icon-del`);
+
 const objectCard = [
   {
     sebel: "sdfsdfsdf",
@@ -21,10 +21,12 @@ localStorage.setItem("localCard", JSON.stringify(objectCard));
 
 const KEY_LOCAL_STORAGE = "localCard";//сюди треба ключ з вебсховища(який буде в модалці створений)
 const shopEl = document.querySelector(".js-shopping-list");
+const shopContainerEl = document.querySelector('.shopping-list-container');
 const readyCard = parseStorage(KEY_LOCAL_STORAGE);
 
 if (readyCard[0] !== undefined) {
-  shopEl.innerHTML = "";
+  shopContainerEl.innerHTML="";
+  shopEl.innerHTML="";
   shopEl.insertAdjacentHTML("afterbegin", funCreateCard(readyCard));
   shopEl.addEventListener("click", deleteCadr);
 } else {
@@ -32,7 +34,7 @@ if (readyCard[0] !== undefined) {
 }
 function deleteCadr(e) {
   if (e.target.nodeName === "BUTTON" || e.target.nodeName === "svg" || e.target.nodeName === "use" ) {
-  shopEl.innerHTML = "";
+  shopEl.innerHTML ="";
   readyCard.splice(e.target.id, 1);
   localStorage.removeItem(KEY_LOCAL_STORAGE);
 
@@ -91,10 +93,10 @@ function funCreateCard(readyCard) {
     .join("");
 }
 function funcCreateEmpty() {
-  shopEl.insertAdjacentHTML(
-    "afterend",
+  shopContainerEl.innerHTML="";
+  shopContainerEl.insertAdjacentHTML(
+    "afterbegin",
     `
-    <div class="shopping-list-container">
     <p class="shopping-list-text">
       This page is empty, add some books and proceed to order.
     </p>
@@ -109,7 +111,6 @@ function funcCreateEmpty() {
       width="265"
       height="198"
     />
-  </div>
     `
   );
 }
