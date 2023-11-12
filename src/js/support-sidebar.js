@@ -1,5 +1,5 @@
 import { supportItems } from './support-item.js';
-import { createMarkup } from './markup.js';
+// import { createMarkup } from './markup.js';
 
 const supportList = document.querySelector('.js-suport-list');
 const arrowDown = document.querySelector('.support-arrow-down');
@@ -16,13 +16,27 @@ arrowUp.addEventListener('click', handlerUp);
 //   i += 1;
 // });
 
-let id = 1;
-for (let i = 0; i < 9; i += 1) {
-  supportItems[i].id = id + i; 
-  supportItems[i].img = `img-${i + 1}@1x.png`;
-  supportItems[i].img2x = `img-${i + 1}@2x.png`;
-}
 
+function createMarkup(supportItems) {
+  let id = 1;
+  for (let i = 0; i < 9; i += 1) {
+    supportItems[i].id = id + i; 
+    supportItems[i].img = `img-${i + 1}@1x.png`;
+    supportItems[i].img2x = `img-${i + 1}@2x.png`;
+  }
+  return supportItems
+    .map(
+      ({ id, title, url, img, img2x }) => `
+        <li class="support-items">
+          <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
+           
+            <img class="support-img" src="./images/support/${img}" srcset="./images/support/${img2x} 2x" alt="${title}" >
+          </a>
+        </li>
+        `
+    )
+    .join('');
+} // <span>0${id}</span> ./images/support/${img} 1x, 
 
 
 supportList.insertAdjacentHTML('afterbegin', createMarkup(supportItems));
