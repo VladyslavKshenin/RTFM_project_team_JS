@@ -32,7 +32,7 @@ function markupCategoryBlock(category) {
             <ul class="top-books-category">
             ${bookCard}
             </ul>
-            <button class="top-books-button" type="button">see more</button>
+            <button class="top-books-button" type="button" data-category="${category.list_name}">see more</button>
           </div>`;
 }
 
