@@ -1,4 +1,4 @@
-import"./assets/support-sidebar-236c4b6a.js";const l=[{sebel:"sdfsdfsdf",sdfss:"sdfsdfsdf",fdsdfsdfsdf:"sdfsdf"},{sebel:"sdfsdfsdf",sdfss:"sdfsdfsdf",fdsdfsdfsdf:"sdfsdf"},{sebel:"sdfsdfsdf",sdfss:"sdfsdfsdf",fdsdfsdfsdf:"sdfsdf"}];localStorage.setItem("localCard",JSON.stringify(l));const o="localCard",t=document.querySelector(".js-shopping-list"),a=r(o);a[0]!==void 0?(t.innerHTML="",t.insertAdjacentHTML("afterbegin",n(a)),t.addEventListener("click",c)):d();function c(s){if(s.target.nodeName==="BUTTON"||s.target.nodeName==="svg"||s.target.nodeName==="use")t.innerHTML="",a.splice(s.target.id,1),localStorage.removeItem(o),g(o,a),a[0]!==void 0?t.insertAdjacentHTML("afterbegin",n(r(o))):d();else return}function n(s){return s.map(({sebel:e},i)=>`<li class="shopping-list-item">
+import"./assets/support-sidebar-236c4b6a.js";const n="/RTFM_project_team_JS/assets/icons-bb60c522.svg";console.dir(`${n}#icon-del`);const c=[{sebel:"sdfsdfsdf",sdfss:"sdfsdfsdf",fdsdfsdfsdf:"sdfsdf"},{sebel:"sdfsdfsdf",sdfss:"sdfsdfsdf",fdsdfsdfsdf:"sdfsdf"},{sebel:"sdfsdfsdf",sdfss:"sdfsdfsdf",fdsdfsdfsdf:"sdfsdf"}];localStorage.setItem("localCard",JSON.stringify(c));const a="localCard",t=document.querySelector(".js-shopping-list"),o=l(a);o[0]!==void 0?(t.innerHTML="",t.insertAdjacentHTML("afterbegin",d(o)),t.addEventListener("click",g)):r();function g(s){if(s.target.nodeName==="BUTTON"||s.target.nodeName==="svg"||s.target.nodeName==="use")t.innerHTML="",o.splice(s.target.id,1),localStorage.removeItem(a),p(a,o),o[0]!==void 0?t.insertAdjacentHTML("afterbegin",d(l(a))):r();else return}function d(s){return s.map(({sebel:e},i)=>`<li class="shopping-list-item">
       <img class="shopping-list-card-img" src="https://storage.googleapis.com/du-prd/books/images/9780670785933.jpg" alt="book">
       <div class="shopping-list-card-container">
         <h2 class="shopping-list-card-title">I will find you</h2>
@@ -23,13 +23,13 @@ import"./assets/support-sidebar-236c4b6a.js";const l=[{sebel:"sdfsdfsdf",sdfss:"
         <div>
           <button class="btn-shop shopping-list-card-container-trash" id="${i}">
             <svg class="shopping-list-card-icon-trash" width="18px" height="18px">
-              <use href="./images/icons.svg#icon-del"></use>
+              <use href="${n}#icon-del"></use>
             </svg>
           </button>
         </div>
       </div>
     </li>
-  `).join("")}function d(){t.insertAdjacentHTML("afterend",`
+  `).join("")}function r(){t.insertAdjacentHTML("afterend",`
     <div class="shopping-list-container">
     <p class="shopping-list-text">
       This page is empty, add some books and proceed to order.
@@ -46,5 +46,5 @@ import"./assets/support-sidebar-236c4b6a.js";const l=[{sebel:"sdfsdfsdf",sdfss:"
       height="198"
     />
   </div>
-    `)}function g(s,e){try{const i=JSON.stringify(e);localStorage.setItem(s,i)}catch(i){console.error("Get state error: ",i.message)}}function r(s){try{const e=localStorage.getItem(s);return e===null?void 0:JSON.parse(e)}catch(e){console.error("Get state error: ",e.message)}}
+    `)}function p(s,e){try{const i=JSON.stringify(e);localStorage.setItem(s,i)}catch(i){console.error("Get state error: ",i.message)}}function l(s){try{const e=localStorage.getItem(s);return e===null?void 0:JSON.parse(e)}catch(e){console.error("Get state error: ",e.message)}}
 //# sourceMappingURL=commonHelpers2.js.map
