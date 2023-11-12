@@ -1,4 +1,4 @@
-import"./assets/support-sidebar-88d74947.js";const n="/RTFM_project_team_JS/assets/icons-bb60c522.svg";console.dir(`${n}#icon-del`);const c=[{sebel:"sdfsdfsdf",sdfss:"sdfsdfsdf",fdsdfsdfsdf:"sdfsdf"},{sebel:"sdfsdfsdf",sdfss:"sdfsdfsdf",fdsdfsdfsdf:"sdfsdf"},{sebel:"sdfsdfsdf",sdfss:"sdfsdfsdf",fdsdfsdfsdf:"sdfsdf"}];localStorage.setItem("localCard",JSON.stringify(c));const a="localCard",t=document.querySelector(".js-shopping-list"),o=l(a);o[0]!==void 0?(t.innerHTML="",t.insertAdjacentHTML("afterbegin",d(o)),t.addEventListener("click",g)):r();function g(s){if(s.target.nodeName==="BUTTON"||s.target.nodeName==="svg"||s.target.nodeName==="use")t.innerHTML="",o.splice(s.target.id,1),localStorage.removeItem(a),p(a,o),o[0]!==void 0?t.insertAdjacentHTML("afterbegin",d(l(a))):r();else return}function d(s){return s.map(({sebel:e},i)=>`<li class="shopping-list-item">
+import"./assets/support-sidebar-88d74947.js";const c="/RTFM_project_team_JS/assets/icons-bb60c522.svg",g=[{sebel:"sdfsdfsdf",sdfss:"sdfsdfsdf",fdsdfsdfsdf:"sdfsdf"},{sebel:"sdfsdfsdf",sdfss:"sdfsdfsdf",fdsdfsdfsdf:"sdfsdf"},{sebel:"sdfsdfsdf",sdfss:"sdfsdfsdf",fdsdfsdfsdf:"sdfsdf"}];localStorage.setItem("localCard",JSON.stringify(g));const a="localCard",i=document.querySelector(".js-shopping-list"),n=document.querySelector(".shopping-list-container"),o=l(a);o[0]!==void 0?(n.innerHTML="",i.innerHTML="",i.insertAdjacentHTML("afterbegin",r(o)),i.addEventListener("click",p)):d();function p(s){if(s.target.nodeName==="BUTTON"||s.target.nodeName==="svg"||s.target.nodeName==="use")i.innerHTML="",o.splice(s.target.id,1),localStorage.removeItem(a),f(a,o),o[0]!==void 0?i.insertAdjacentHTML("afterbegin",r(l(a))):d();else return}function r(s){return s.map(({sebel:e},t)=>`<li class="shopping-list-item">
       <img class="shopping-list-card-img" src="https://storage.googleapis.com/du-prd/books/images/9780670785933.jpg" alt="book">
       <div class="shopping-list-card-container">
         <h2 class="shopping-list-card-title">I will find you</h2>
@@ -21,16 +21,15 @@ import"./assets/support-sidebar-88d74947.js";const n="/RTFM_project_team_JS/asse
           </div>
         </div>
         <div>
-          <button class="btn-shop shopping-list-card-container-trash" id="${i}">
+          <button class="btn-shop shopping-list-card-container-trash" id="${t}">
             <svg class="shopping-list-card-icon-trash" width="18px" height="18px">
-              <use href="${n}#icon-del"></use>
+              <use href="${c}#icon-del"></use>
             </svg>
           </button>
         </div>
       </div>
     </li>
-  `).join("")}function r(){t.insertAdjacentHTML("afterend",`
-    <div class="shopping-list-container">
+  `).join("")}function d(){n.innerHTML="",n.insertAdjacentHTML("afterbegin",`
     <p class="shopping-list-text">
       This page is empty, add some books and proceed to order.
     </p>
@@ -45,6 +44,5 @@ import"./assets/support-sidebar-88d74947.js";const n="/RTFM_project_team_JS/asse
       width="265"
       height="198"
     />
-  </div>
-    `)}function p(s,e){try{const i=JSON.stringify(e);localStorage.setItem(s,i)}catch(i){console.error("Get state error: ",i.message)}}function l(s){try{const e=localStorage.getItem(s);return e===null?void 0:JSON.parse(e)}catch(e){console.error("Get state error: ",e.message)}}
+    `)}function f(s,e){try{const t=JSON.stringify(e);localStorage.setItem(s,t)}catch(t){console.error("Get state error: ",t.message)}}function l(s){try{const e=localStorage.getItem(s);return e===null?void 0:JSON.parse(e)}catch(e){console.error("Get state error: ",e.message)}}
 //# sourceMappingURL=commonHelpers2.js.map
