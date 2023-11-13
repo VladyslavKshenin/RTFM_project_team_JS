@@ -8,7 +8,6 @@
   display: flex;
   /* gap: 24px; */
   flex-direction: column;
-
 }
 /* Tablet styles */
 @media screen and (min-width: 768px) {
@@ -52,7 +51,13 @@
 
   text-transform: uppercase;
 }
+.ctg-item-active {
+  color: var(--violet);
 
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
 .ctg-list {
   display: flex;
   flex-direction: column;
