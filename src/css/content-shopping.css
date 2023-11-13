@@ -1,5 +1,5 @@
 .shopping-list-title {
-    padding: 0 0 40px 20px;
+    margin: 0 0 40px 0;
 
     color: var(--black);
     font-family: var(--primary-font);
@@ -12,7 +12,7 @@
 
 @media only screen and (min-width: 768px) {
     .shopping-list-title {
-        padding: 0 0 40px 32px;
+        margin: 0 0 40px 0;
 
         font-size: 48px;
         line-height: 108%;
@@ -22,7 +22,7 @@
 
 @media only screen and (min-width: 1440px) {
     .shopping-list-title {
-        padding: 0 0 40px 20px;
+        margin: 0 0 40px 20px;
     }
 }
 
@@ -112,26 +112,23 @@
     background: var(--white);
 
     display: flex;
-    min-width: 320px;
+    min-width: 280px;
     max-width: fit-content;
     padding: 14px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin:0 auto;
 }
 
 @media only screen and (min-width: 768px) {
     .shopping-list-item {
         padding: 24px;
-        margin-left: 32px;
-        margin-right: 32px;
+        margin: 0 auto;
     }
 }
 
 @media only screen and (min-width: 1440px) {
     .shopping-list-item {
         padding: 24px;
-        margin-left: 20px;
-        margin-right: 24px;
+        margin: 0 auto;
     }
 }
 
@@ -215,12 +212,12 @@
     display: flex;
     justify-content: space-between;
     margin-top: 12px;
-    filter: grayscale(100%);
 }
 
 .shopping-list-card-container-img {
     display: flex;
     gap: 8px;
+    align-items: center;
 }
 
 @media only screen and (min-width: 768px) {
@@ -230,9 +227,9 @@
 }
 
 .shopping-list-card-icon-amazon {
-    margin-top: auto;
     width: 32px;
     height: 11px;
+    filter: grayscale(100%);
 }
 
 @media only screen and (min-width: 768px) {
@@ -245,6 +242,7 @@
 .shopping-list-card-icon-book {
     width: 16px;
     height: 16px;
+    filter: grayscale(100%);
 }
 
 @media only screen and (min-width: 768px) {
