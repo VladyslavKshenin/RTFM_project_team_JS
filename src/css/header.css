@@ -650,6 +650,52 @@ body.dark-theme,
     color: #111111;
 }
 
+/**
+  |============================
+  | Style for conten home dark
+  |============================
+*/
 .dark-theme .header-form-link {
     color: rgba(246, 246, 246, 0.5);
 }
+
+.dark-theme .ctg-item {
+    color: rgba(255, 255, 255, 0.60);
+}
+
+.dark-theme .books-header {
+    color: var(--white);
+}
+
+.dark-theme .book-title {
+    color: var(--white);
+}
+
+.dark-theme .top-books-button {
+    color: var(--white);
+}
+
+.dark-theme .ctg-item:hover {
+    color: var(--yellow);
+}
+.dark-theme  ::-webkit-scrollbar-thumb {
+     background: rgba(17, 17, 17, 0.60);
+ }
+ /**
+   |============================
+   | Style for conten shoping list dark
+   |============================
+ */
+ .dark-theme .shopping-list-title {
+    color: var(--white);
+ }
+ .dark-theme .shopping-list-item {
+    background-color: var(--black);
+ }
+ .dark-theme .shopping-list-card-desc{
+    color: var(--white);
+ }
+ .dark-theme .shopping-list-card-title {
+    color: var(--white);
+ }
+ 
