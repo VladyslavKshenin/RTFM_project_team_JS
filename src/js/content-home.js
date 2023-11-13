@@ -8,7 +8,6 @@ api.fetchBookList(api.API_OPTIONS.top).then(markup.renderTopBooks);
 
 function showSelectedCategoryBooks(event) {
   const selectedCategory = event.target.childNodes[0].data;
-  console.dir(event.target);
   console.log(selectedCategory);
   if (selectedCategory !== 'All categories') {
     api

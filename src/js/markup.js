@@ -4,11 +4,9 @@ const refs = getRefs();
 
 // top books (bestsellers) and category books collection rendering functions
 
-function markupCategoryBlock(category) {
-  const bookCard = category.books
-    .map(
-      book => `<li class="top-book-card">
-            <a class="book-link" href="">
+function markupBookCard(book, cardClass) {
+  return `<li class="${cardClass}">
+            <a class="book-link" href="" data-id="${book._id}">
               <img class="book-img"
                 src="${book.book_image}"
                 alt="book image"
@@ -24,8 +22,12 @@ function markupCategoryBlock(category) {
                 </p>
               </div>
             </a>
-          </li>`
-    )
+          </li>`;
+}
+
+function markupCategoryBlock(category) {
+  const bookCard = category.books
+    .map(book => markupBookCard(book, 'top-book-card'))
     .join('');
   return `<div class="top-books-block">
             <h2 class="top-books-category-header">${category.list_name}</h2>
@@ -38,26 +40,7 @@ function markupCategoryBlock(category) {
 
 function markupCategoryCollection(books) {
   const bookCard = books
-    .map(
-      book => `<li class="category-book-card">
-            <a class="book-link" href="">
-              <img class="book-img"
-                src="${book.book_image}"
-                alt="book image"
-                width="100%"
-                loading="lazy"
-              />
-              <div class="book-info">
-                <h3 class="book-title">
-                  ${book.title}
-                </h3>
-                <p class="book-author">
-                  ${book.author}
-                </p>
-              </div>
-            </a>
-          </li>`
-    )
+    .map(book => markupBookCard(book, 'category-book-card'))
     .join('');
   return `<ul class="category-books">
             ${bookCard}
@@ -130,8 +113,4 @@ export function createMarkup(arr) {
     .join('');
 } //srcset="${img} 1x, ${img2x} 2x" height="32" './images/support/img-1@1x.png' srcset="${img2x} 2x"
 
-
 export default { renderTopBooks, renderCategoryBooks, insertCategoryBlocks };
-
-
-
