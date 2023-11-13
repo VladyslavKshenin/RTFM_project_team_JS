@@ -1,36 +1,79 @@
-const refs = {
-    openBurgerBtn: document.querySelector('.burger-menu'),
-    closeBurgerBtn: document.querySelector('.mobile-menu__button'),
-    burger: document.querySelector('.mobile-menu-container'),
-};
+const burgerBtn = document.querySelector('.js-open-menu');
+const closeBtn = document.querySelector('.js-close-menu');
+const modal = document.querySelector('.js-modal');
 
-refs.openBurgerBtn.addEventListener('click', toggleModal);
-refs.closeBurgerBtn.addEventListener('click', toggleModal);
+const modalChannel = new BroadcastChannel('modal-channel');
 
-function toggleModal() {
-    refs.burger.classList.toggle('is-hidden');
-}
+burgerBtn.addEventListener('click', function () {
+    modal.style.display = 'block';
+    burgerBtn.classList.add('hidden');
+    modalChannel.postMessage({ action: 'openModal' });
+});
 
-const toggleSwitch = document.querySelector(
-    '.toggle-theme input[type="checkbox"]'
-);
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
+closeBtn.addEventListener('click', function () {
+    modal.style.display = 'none';
+    burgerBtn.classList.remove('hidden');
+});
 
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
+modalChannel.addEventListener('message', function (event) {
+    if (event.data.action === 'openModal') {
+        modal.style.display = 'block';
+        burgerBtn.classList.add('hidden');
+    }
+});
+
+window.addEventListener('beforeunload', function () {
+    modalChannel.close();
+});
+// light-dark theme
+const inputTheme = document.querySelector('.div-theme');
+const spanTheme = document.querySelector('.span-theme');
+
+const body = document.querySelector('body');
+let indexTheme = false;
+
+inputTheme.addEventListener('change', () => {
+    if (indexTheme) {
+        indexTheme = false;
+        localStorage.setItem('userTheme', 'light');
+    } else {
+        indexTheme = true;
+        localStorage.setItem('userTheme', 'dark');
+    }
+
+    currentTheme();
+});
+
+function currentTheme() {
+    try {
+        indexTheme = localStorage.getItem('userTheme') === 'dark' ? true : false;
+    } catch (error) {
+        indexTheme = false;
+    }
+
+    const logo = document.querySelector('.header-logo-icon');
+    const logo1 = document.querySelector('.header-logo-icon1');
+    if (indexTheme) {
+        body.classList.add('dark-theme');
+        spanTheme.style.left = '20px';
+        logo.style.width = '0px';
+        logo1.style.width = '109px';
+    } else {
+        body.classList.remove('dark-theme');
+        spanTheme.style.left = '2px';
+        logo1.style.width = '0px';
+        logo.style.width = '109px';
     }
 }
 
-toggleSwitch.addEventListener('change', switchTheme, false);
+currentTheme();
 
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
+
+const headerNavLinks = document.querySelector('.header-nav-item').querySelectorAll('a');
+const headerNavLinksModal = document.querySelector('.header-nav-item-modal').querySelectorAll('a');
+if (document.querySelector('.home-page') === null) {
+    for (let index = 0; index < headerNavLinks.length; index++) {
+        headerNavLinks[index].classList.toggle("heder-active");
+        headerNavLinksModal[index].classList.toggle("heder-active");
     }
 }
