@@ -122,13 +122,13 @@ export function createMarkup(arr) {
         <li class="support-items">
           <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
             <span>0${id}</span>
-            <img class="support-img" src="${img}" alt="${title}" >
+            <img class="support-img" src="${img}" srcset="${img} 1x, ${img2x} 2x"  alt="${title}" >
           </a>
         </li>
         `
     )
     .join('');
-} //srcset="${img} 1x, ${img2x} 2x" height="32" './images/support/img-1@1x.png' srcset="${img2x} 2x"
+} 
 
 
 export default { renderTopBooks, renderCategoryBooks, insertCategoryBlocks };
