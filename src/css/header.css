@@ -533,6 +533,7 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
     border: 1.5px solid #111111;
     border-radius: 18px;
 }
+
 /* light-dark theme */
 .header-logo-container {
     display: flex;
@@ -542,12 +543,12 @@ body.dark-theme,
 .dark-theme .modal-fav,
 .dark-theme .heder-modal-autoriz {
     background-color: #202024;
-    
+
 }
 
 .dark-theme .header-container {
     background: #111111;
-   
+
 }
 
 .dark-theme .label-them {
@@ -576,7 +577,7 @@ body.dark-theme,
 .dark-theme .header-item-icon,
 .dark-theme .header-logo-icon {
     fill: #FFFFFF;
-    
+
 }
 
 .dark-theme .nav-category-item.active,
@@ -698,4 +699,3 @@ body.dark-theme,
  .dark-theme .shopping-list-card-title {
     color: var(--white);
  }
- 
