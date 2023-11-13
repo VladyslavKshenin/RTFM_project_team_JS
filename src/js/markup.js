@@ -128,7 +128,7 @@ export function createMarkup(arr) {
         `
     )
     .join('');
-} //srcset="${img} 1x, ${img2x} 2x" height="32" './images/support/img-1@1x.png' srcset="${img2x} 2x"
+} 
 
 
 export default { renderTopBooks, renderCategoryBooks, insertCategoryBlocks };

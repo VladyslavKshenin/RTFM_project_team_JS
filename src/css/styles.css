@@ -111,3 +111,49 @@ body {
   line-height: 1.28;
   letter-spacing: -0.56px;
 }
+
+.section-position {
+  padding-top: 40px;
+}
+
+.ctg-sidebar {
+  margin-bottom: 40px;
+}
+
+.support-container {
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .sidebar-home-section {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 100px;
+  }
+
+  .ctg-sidebar {
+    margin-bottom: 0px;
+  }
+
+  .support-container {
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .sidebar-home-section {
+    display: block;
+    margin-bottom: 0px;
+  }
+
+  .ctg-sidebar {
+    margin-bottom: 86px;
+  }
+
+  .container-positioned {
+    display: flex;
+    gap: 40px;
+    justify-content: start;
+  }
+}
+
