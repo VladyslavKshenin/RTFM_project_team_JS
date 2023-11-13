@@ -679,28 +679,23 @@ body.dark-theme,
 .dark-theme .ctg-item:hover {
     color: var(--yellow);
 }
-
-.dark-theme ::-webkit-scrollbar-thumb {
-    background: rgba(17, 17, 17, 0.60);
-}
-
-/**
+.dark-theme  ::-webkit-scrollbar-thumb {
+     background: rgba(17, 17, 17, 0.60);
+ }
+ /**
    |============================
    | Style for conten shoping list dark
    |============================
  */
-.dark-theme .shopping-list-title {
+ .dark-theme .shopping-list-title {
     color: var(--white);
-}
-
-.dark-theme .shopping-list-item {
+ }
+ .dark-theme .shopping-list-item {
     background-color: var(--black);
-}
-
-.dark-theme .shopping-list-card-desc {
+ }
+ .dark-theme .shopping-list-card-desc{
     color: var(--white);
-}
-
-.dark-theme .shopping-list-card-title {
+ }
+ .dark-theme .shopping-list-card-title {
     color: var(--white);
-}
+ }

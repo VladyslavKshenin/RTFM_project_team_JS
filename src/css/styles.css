@@ -15,27 +15,24 @@
 
 :root {
   /*Font*/
-    --primary-font: "DM Sans",
-      sans-serif;
-      /* Сolors */
-      --black: #111;
-      --black-one: #202024;
-      --violet: #4F2EE8;
-      --yellow: #EAC645;
-      --white: #fff;
-      --background-body-light: #F6F6F6;
-      --background-body-dark: #202024;
-      
+  --primary-font: 'DM Sans', sans-serif;
+  /* Сolors */
+  --black: #111;
+  --black-one: #202024;
+  --violet: #4f2ee8;
+  --yellow: #eac645;
+  --white: #fff;
+  --grey: #b4afaf;
+  --background-body-light: #f6f6f6;
+  --background-body-dark: #202024;
 
-      
-        /* Other */
-        
-          font-synthesis: none;
-          text-rendering: optimizeLegibility;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          -webkit-text-size-adjust: 100%;
+  /* Other */
 
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 @font-face {
@@ -82,3 +79,86 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+/* Common Style */
+.container {
+  min-width: 320px;
+  max-width: 375px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/*  tablet screen */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+/*  desktop screen */
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 24px;
+  }
+}
+
+body {
+  background-color: var(--background-body-light);
+  color: var(--black);
+  font-family: DM Sans;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.56px;
+}
+
+.section-position {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.ctg-sidebar {
+  margin-bottom: 40px;
+}
+
+.sidebar-home-section {
+  padding-bottom: 80px;
+}
+
+@media only screen and (min-width: 768px) {
+  .sidebar-home-section {
+    display: flex;
+    gap: 32px;
+    padding-bottom: 100px;
+  }
+
+  .ctg-sidebar {
+    margin-bottom: 0px;
+  }
+
+  .sidebar-home-section {
+    padding-bottom: 100px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .sidebar-home-section {
+    display: block;
+    margin-bottom: 0px;
+  }
+
+  .ctg-sidebar {
+    margin-bottom: 86px;
+  }
+
+  .container-positioned {
+    display: flex;
+    gap: 40px;
+    justify-content: start;
+  }
+  
+  .sidebar-home-section {
+    padding-bottom: 72px;
+  }
+}
+
