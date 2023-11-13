@@ -122,7 +122,7 @@ export function createMarkup(arr) {
         <li class="support-items">
           <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
             <span>0${id}</span>
-            <img class="support-img" src="${img}" alt="${title}" >
+            <img class="support-img" src="${img}" srcset="${img} 1x, ${img2x} 2x"  alt="${title}" >
           </a>
         </li>
         `

@@ -114,29 +114,30 @@ body {
 
 .section-position {
   padding-top: 40px;
+  padding-bottom: 80px;
 }
 
 .ctg-sidebar {
   margin-bottom: 40px;
 }
 
-.support-container {
-  margin-bottom: 40px;
+.sidebar-home-section {
+  padding-bottom: 80px;
 }
 
 @media only screen and (min-width: 768px) {
   .sidebar-home-section {
     display: flex;
     gap: 32px;
-    margin-bottom: 100px;
+    padding-bottom: 100px;
   }
 
   .ctg-sidebar {
     margin-bottom: 0px;
   }
 
-  .support-container {
-    margin-bottom: 0px;
+  .sidebar-home-section {
+    padding-bottom: 100px;
   }
 }
 
@@ -154,6 +155,10 @@ body {
     display: flex;
     gap: 40px;
     justify-content: start;
+  }
+  
+  .sidebar-home-section {
+    padding-bottom: 72px;
   }
 }
 
