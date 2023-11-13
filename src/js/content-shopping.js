@@ -78,8 +78,10 @@ function funCreateCard(readyCard) {
         <div class="shopping-list-card-bottom-container">
           <p class="shopping-list-card-author">Harlan Coben</p>
           <div class="shopping-list-card-container-img">
-            <a href="">
+            <a href="" class="shopping-amazon-link">
               <img class="shopping-list-card-icon-amazon" src="${amazonCard}" alt="amazon-icon">
+            </a>
+            <a href="" class="shopping-book-link">
               <img class="shopping-list-card-icon-book" src="${bookCard}" alt="book-icon">
             </a>
           </div>
