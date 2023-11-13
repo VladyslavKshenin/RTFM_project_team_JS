@@ -474,6 +474,17 @@ input[type=checkbox]:checked~.check::after {
 }
 
 
+.dark-theme .shopping-list-card-title {
+    color: var(--white);
+}
+
+
+
+/**
+  |============================
+  | Style for conten home dark
+  |============================
+*/
 .dark-theme .header-form-link {
     color: rgba(246, 246, 246, 0.5);
 }
@@ -502,7 +513,11 @@ input[type=checkbox]:checked~.check::after {
     background: rgba(17, 17, 17, 0.60);
 }
 
-
+/**
+   |============================
+   | Style for conten shoping list dark
+   |============================
+ */
 .dark-theme .shopping-list-title {
     color: var(--white);
 }
