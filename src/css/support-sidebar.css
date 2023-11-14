@@ -104,40 +104,55 @@
   gap: 16px;
 }
 
+.scroll-up-container {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 5px solid rgba(79, 46, 232, 0.30);
+  cursor: pointer;
+  box-shadow: inset .2rem .2rem .5rem rgba(79, 46, 232, 0.30),
+  inset -.2rem -.2rem .5rem var(--white);
+  opacity: 1;
+  animation: waves 4s linear infinite;
+  transition: all .2s linear;
+  filter: blur(1px);
 
-/**
-  |============================
-  | Для приховування другого лого.
-  |============================
-*/
-/* .header-logo-icon1 {
-    display: none;
-} */
-
-/**
-   |============================
-   | For dark theme
-   |============================
- */
-
-/* .header-logo-icon1 {
-    display: none;
-} 
-
-.header-logo-icon {
-    display: block;
 }
 
-body {
-    background-color: var(--background-body-dark);
-    color: #FFF;
-} 
-
-.ctg-item {
-    color: rgba(255, 255, 255, 0.60);
+.scroll-up{
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: var(--violet);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-::-webkit-scrollbar-thumb {
-    background: rgba(17, 17, 17, 0.6);
-} */
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 20px;
+  bottom: 140px;
+}
+
+.back-to-top--show {
+  display: block;
+}
+
+@keyframes waves {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
 

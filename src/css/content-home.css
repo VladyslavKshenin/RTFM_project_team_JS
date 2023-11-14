@@ -2,23 +2,9 @@
 /*   HOME TOP BOOKS STYLES   */
 /*                           */
 
-.book-collection-wrapper {
-  padding-top: 40px;
-  padding-bottom: 80px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1439px) {
-  .book-collection-wrapper {
-    padding-top: 98px;
-    padding-bottom: 100px;
-  }
-}
-
 @media only screen and (min-width: 1440px) {
   .book-collection-wrapper {
     max-width: 1036px;
-    padding-left: 40px;
-    padding-bottom: 72px;
   }
 }
 
