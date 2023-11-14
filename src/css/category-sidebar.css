@@ -44,13 +44,6 @@
   }
 }
 
-.ctg-item:hover {
-  color: var(--violet);
-
-  font-weight: 700;
-
-  text-transform: uppercase;
-}
 .ctg-item-active {
   color: var(--violet);
 
@@ -79,4 +72,8 @@
 ::-webkit-scrollbar-thumb {
   border-radius: 12px;
   background: #e0e0e0;
+}
+::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  margin-bottom: 100px;
 }
