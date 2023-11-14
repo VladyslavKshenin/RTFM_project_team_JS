@@ -1,7 +1,14 @@
+// x-close
 import icon from './../images/icons.svg'
-
-
-
+const close = document.querySelector('.js-close-menu');
+createMarkupSvg(icon)
+function createMarkupSvg(icon) {
+    return arrowDown.insertAdjacentHTML('afterbegin',
+        <svg class="icon-close" width="28" height="28">
+            <use href="${icon}#x-close"></use>
+        </svg>)
+}
+// Mobile window
 const burgerBtn = document.querySelector('.js-open-menu');
 const closeBtn = document.querySelector('.js-close-menu');
 const modal = document.querySelector('.js-modal');
@@ -75,15 +82,3 @@ function currentTheme() {
 
 currentTheme();
 
-// x-close
-
-const close = document.querySelector('.js-close-menu');
-
-createMarkupSvg(icon)
-
-function createMarkupSvg(icon) {
-    return arrowDown.insertAdjacentHTML('afterbegin',
-        <svg class="icon-close" width="28" height="28">
-            <use href="${icon}#x-close"></use>
-        </svg>)
-}
