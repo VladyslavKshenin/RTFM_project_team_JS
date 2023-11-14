@@ -16,6 +16,7 @@ async function fetchBookList(option, select = '') {
     return list;
   } catch (error) {
     console.log(`An error occurred: ${error.message}`);
+    alert('An error occurred');
   }
 }
 
@@ -29,6 +30,7 @@ async function fetchBookById(bookId) {
     return book;
   } catch (error) {
     console.log(`An error occurred: ${error.message}`);
+    alert('An error occurred');
   }
 }
 

@@ -8,9 +8,6 @@ burgerBtn.addEventListener('click', function () {
     modal.style.display = 'block';
     burgerBtn.classList.add('hidden');
     modalChannel.postMessage({ action: 'openModal' });
-    if (closeBtn.classList.contains('visually-hidden')) {
-        closeBtn.classList.remove('visually-hidden')
-    }
 });
 
 closeBtn.addEventListener('click', function () {
@@ -72,6 +69,7 @@ function currentTheme() {
 currentTheme();
 
 
+
 // const headerNavLinks = document.querySelector('.header-nav-item').querySelectorAll('a');
 // const headerNavLinksModal = document.querySelector('.header-nav-item-modal').querySelectorAll('a');
 // if (document.querySelector('.home-page') === null) {
@@ -80,5 +78,6 @@ currentTheme();
 //     //     headerNavLinksModal[index].classList.toggle("heder-active");
 //     // }
 // }
+
 
 
