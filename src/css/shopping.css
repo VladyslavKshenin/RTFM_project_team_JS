@@ -97,6 +97,17 @@
         padding: 0 32px;
     }
 }
+/**
+  |============================
+  | for header aktive btn
+  |============================
+*/
+.heder-active-shopping {
+    background-color: rgba(234, 198, 69, 1);
+}
+.dark-theme .heder-active-shopping {
+    color: var(--black);
+}
 
 body {
     background-color: var(--background-body-light);

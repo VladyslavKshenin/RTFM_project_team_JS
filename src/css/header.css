@@ -117,9 +117,9 @@
     font-weight: 700;
 }
 
-.heder-active {
+/* .heder-active {
     background-color: rgba(234, 198, 69, 1);
-}
+} */
 
 .header-item {
     border-radius: 36px;
@@ -548,6 +548,7 @@ body.dark-theme,
 
 .dark-theme .header-container {
     background: #111111;
+    border: 1.5px solid #FFF;
 
 }
 
@@ -676,6 +677,9 @@ body.dark-theme,
     color: var(--white);
 }
 
+.dark-theme .ctg-item-active {
+    color: var(--yellow);
+}
 .dark-theme .ctg-item:hover {
     color: var(--yellow);
 }

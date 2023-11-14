@@ -102,6 +102,18 @@
     padding: 0 24px;
   }
 }
+/**
+  |============================
+  | for header aktive btn
+  |============================
+*/
+.heder-active {
+  background-color: rgba(234, 198, 69, 1);
+  
+}
+.dark-theme .heder-active {
+  color: var(--black);
+}
 
 body {
   background-color: var(--background-body-light);
