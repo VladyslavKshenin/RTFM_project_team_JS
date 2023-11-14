@@ -115,6 +115,7 @@
   opacity: 1;
   animation: waves 4s linear infinite;
   transition: all .2s linear;
+  z-index: 1;
 }
 
 .scroll-up{
