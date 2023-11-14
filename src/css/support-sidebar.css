@@ -115,8 +115,6 @@
   opacity: 1;
   animation: waves 4s linear infinite;
   transition: all .2s linear;
-  filter: blur(1px);
-
 }
 
 .scroll-up{
@@ -151,7 +149,7 @@
   }
 
   100% {
-    transform: scale(1.5);
+    transform: scale(1.3);
     opacity: 0;
   }
 }

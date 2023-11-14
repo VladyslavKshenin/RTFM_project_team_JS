@@ -180,10 +180,12 @@
   line-height: 1.286;
   letter-spacing: -0.14px;
   margin-bottom: 40px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .top-books-button:hover,
 .top-books-button:focus {
   background-color: var(--violet);
   color: var(--white);
+  transform: scale(1.05);
 }
