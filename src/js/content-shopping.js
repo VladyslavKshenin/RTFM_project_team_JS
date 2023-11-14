@@ -2,9 +2,10 @@ import logo from "./../images/icons.svg"
 import emptyDesk1 from './../images/shopping-list-images/books-desk@1x.png';
 import emptyDesk2 from './../images/shopping-list-images/books-desk@2x.png';
 import emptyMob1 from './../images/shopping-list-images/books-mob@1x.png';
-import amazonCard from './../images/shopping-list-images/image 1.png';
-import bookCard from './../images/shopping-list-images/image 2.png';
-console.log(amazonCard);
+import amazon from '../images/modal-window/amazon.png';
+import amazon2x from '../images/modal-window/amazon@2x.png';
+import applebooks from '../images/modal-window/applebooks.png';
+import applebooks2x from '../images/modal-window/applebooks@2x.png';
 const objectCard = [
   {
     sebel: "sdfsdfsdf",
@@ -78,11 +79,11 @@ function funCreateCard(readyCard) {
         <div class="shopping-list-card-bottom-container">
           <p class="shopping-list-card-author">Harlan Coben</p>
           <div class="shopping-list-card-container-img">
-            <a href="" class="shopping-amazon-link">
-              <img class="shopping-list-card-icon-amazon" src="${amazonCard}" alt="amazon-icon">
+            <a href="" class="shopping-amazon-link" rel="noopener noreferrer nofollow" target="_blank">
+              <img class="shopping-list-card-icon-amazon"srcset="${amazon} 1x, ${amazon2x} 2x" src="${amazon}" alt="Amazon" loading="lazy">
             </a>
-            <a href="" class="shopping-book-link">
-              <img class="shopping-list-card-icon-book" src="${bookCard}" alt="book-icon">
+            <a href="" class="shopping-book-link" rel="noopener noreferrer nofollow" target="_blank">
+              <img class="shopping-list-card-icon-book" srcset="${applebooks} 1x, ${applebooks2x} 2x" src="${applebooks}" alt="Apple books" loading="lazy">
             </a>
           </div>
         </div>
