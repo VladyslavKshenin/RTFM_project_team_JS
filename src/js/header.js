@@ -76,7 +76,6 @@ function currentTheme() {
 currentTheme();
 
 // x-close
-import icon from './../images/icons.svg';
 
 const close = document.querySelector('.js-close-menu');
 
