@@ -8,6 +8,9 @@ burgerBtn.addEventListener('click', function () {
     modal.style.display = 'block';
     burgerBtn.classList.add('hidden');
     modalChannel.postMessage({ action: 'openModal' });
+    if (closeBtn.classList.contains('visually-hidden')) {
+        closeBtn.classList.remove('visually-hidden')
+    }
 });
 
 closeBtn.addEventListener('click', function () {
