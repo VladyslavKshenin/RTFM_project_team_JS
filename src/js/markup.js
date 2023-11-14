@@ -8,7 +8,7 @@ function markupCategoryBlock(category) {
   const bookCard = category.books
     .map(
       book => `<li class="top-book-card">
-            <a class="book-link" href="">
+            <a class="book-link" href="" data-id="${book._id}">
               <img class="book-img"
                 src="${book.book_image}"
                 alt="book image"
@@ -40,7 +40,7 @@ function markupCategoryCollection(books) {
   const bookCard = books
     .map(
       book => `<li class="category-book-card">
-            <a class="book-link" href="">
+            <a class="book-link" href="" data-id="${book._id}">
               <img class="book-img"
                 src="${book.book_image}"
                 alt="book image"
