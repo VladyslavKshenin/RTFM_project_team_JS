@@ -1,4 +1,4 @@
-import icon from './../images/icons.svg';
+
 
 const burgerBtn = document.querySelector('.js-open-menu');
 const closeBtn = document.querySelector('.js-close-menu');
@@ -73,14 +73,3 @@ function currentTheme() {
 
 currentTheme();
 
-
-const close = document.querySelector('.js-close-menu');
-
-createMarkupSvg(icon)
-
-function createMarkupSvg(icon) {
-    return arrowDown.insertAdjacentHTML`'afterbegin',
-        <svg class="icon-close" width="28" height="28">
-            <use href="${icon}#x-close"></use>
-        </svg>`
-}
