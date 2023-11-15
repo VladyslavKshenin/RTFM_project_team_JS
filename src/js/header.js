@@ -1,8 +1,13 @@
-
+import icon from './../images/icons.svg';
 
 const burgerBtn = document.querySelector('.js-open-menu');
 const closeBtn = document.querySelector('.js-close-menu');
 const modal = document.querySelector('.js-modal');
+
+closeBtn.insertAdjacentHTML('afterbegin',
+    `<svg class="icon-close" width="28" height="28">
+    <use href="${icon}#x-close"></use>
+  </svg>`)
 
 const modalChannel = new BroadcastChannel('modal-channel');
 
@@ -10,14 +15,19 @@ burgerBtn.addEventListener('click', function () {
     modal.style.display = 'block';
     burgerBtn.classList.add('hidden');
     modalChannel.postMessage({ action: 'openModal' });
+
     if (closeBtn.classList.contains('visually-hidden')) {
-        closeBtn.classList.remove('visually-hidden')
-    }
+        closeBtn.classList.remove('visually-hidden');
+    };
+
+    body.style.overflowY = 'hidden';
 });
 
 closeBtn.addEventListener('click', function () {
     modal.style.display = 'none';
     burgerBtn.classList.remove('hidden');
+
+    body.style.overflowY = '';
 });
 
 modalChannel.addEventListener('message', function (event) {
@@ -73,3 +83,12 @@ function currentTheme() {
 
 currentTheme();
 
+
+// const headerNavLinks = document.querySelector('.header-nav-item').querySelectorAll('a');
+// const headerNavLinksModal = document.querySelector('.header-nav-item-modal').querySelectorAll('a');
+// if (document.querySelector('.home-page') === null) {
+//     // for (let index = 0; index < headerNavLinks.length; index++) {
+//     //     headerNavLinks[index].classList.toggle("heder-active");
+//     //     headerNavLinksModal[index].classList.toggle("heder-active");
+//     // }
+// }

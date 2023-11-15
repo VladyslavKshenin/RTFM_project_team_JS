@@ -152,6 +152,12 @@
     padding: 14px 15px;
     border: 1.5px solid #111111;
     border-radius: 18px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-user:hover,
+.header-user:focus {
+    transform: scale(1.05);
 }
 
 .header-logo-nav {
@@ -159,15 +165,9 @@
     align-items: center;
 }
 
-.header-mobile-menu-icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
+.icon-close {
+    stroke: #111111;
 }
-
 
 
 @keyframes slide-down {
@@ -207,8 +207,9 @@
     border-top: 1.5px solid #111111;
 }
 
+
 .header-modal-image {
-    background-image: url(../images/RTFM2.png);
+    background-image: url(../images/RTFM.png);
     width: 100%;
     height: 350px;
     position: absolute;
@@ -229,7 +230,7 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
 
 .menu-toggle-close {
     position: absolute;
-    top: -39px;
+    top: -54px;
     right: 20px;
     background-color: transparent;
     border: none;
@@ -252,6 +253,12 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
     left: 20px;
     position: absolute;
     align-items: center;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-user-modal:hover,
+.header-user-modal:focus {
+    transform: scale(1.05);
 }
 
 .header-user-modal-out {
@@ -597,7 +604,10 @@ body.dark-theme,
     color: #FFFFFF;
 }
 
-.dark-theme .header-mobile-menu-icon,
+.dark-theme .icon-close {
+    stroke: var(--white);
+}
+
 .dark-theme .header-burger-icon {
     fill: #FFFFFF;
     stroke: #FFFFFF;
@@ -680,26 +690,32 @@ body.dark-theme,
 .dark-theme .ctg-item-active {
     color: var(--yellow);
 }
+
 .dark-theme .ctg-item:hover {
     color: var(--yellow);
 }
-.dark-theme  ::-webkit-scrollbar-thumb {
-     background: rgba(17, 17, 17, 0.60);
- }
- /**
+
+.dark-theme ::-webkit-scrollbar-thumb {
+    background: rgba(17, 17, 17, 0.60);
+}
+
+/**
    |============================
    | Style for conten shoping list dark
    |============================
  */
- .dark-theme .shopping-list-title {
+.dark-theme .shopping-list-title {
     color: var(--white);
- }
- .dark-theme .shopping-list-item {
+}
+
+.dark-theme .shopping-list-item {
     background-color: var(--black);
- }
- .dark-theme .shopping-list-card-desc{
+}
+
+.dark-theme .shopping-list-card-desc {
     color: var(--white);
- }
- .dark-theme .shopping-list-card-title {
+}
+
+.dark-theme .shopping-list-card-title {
     color: var(--white);
- }
+}
