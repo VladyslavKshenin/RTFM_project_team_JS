@@ -1,8 +1,16 @@
+
 import icon from './../images/icons.svg';
+import icon from './../images/icons.svg'; 
+
 
 const burgerBtn = document.querySelector('.js-open-menu');
 const closeBtn = document.querySelector('.js-close-menu');
 const modal = document.querySelector('.js-modal');
+      
+closeBtn.insertAdjacentHTML('afterbegin',
+  `<svg class="icon-close" width="28" height="28">
+    <use href="${icon}#x-close"></use>
+  </svg>`) 
 
 closeBtn.insertAdjacentHTML('afterbegin',
     `<svg class="icon-close" width="28" height="28">

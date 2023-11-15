@@ -134,6 +134,16 @@
   position: relative;
   overflow: hidden;
   margin-bottom: 14px;
+  transition: all 450ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.book-img-wrapper:hover {
+  transform: scale(1.035, 1.035);
+  box-shadow: 0 15px 30px rgba(79, 46, 232, 0.2);;
+}
+
+.book-img-wrapper img {
+  transform: translateY(-10px);
 }
 
 .book-img {

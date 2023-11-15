@@ -157,7 +157,8 @@
 
 .header-user:hover,
 .header-user:focus {
-    transform: scale(1.05);
+ transform: scale(1.05);
+ transform: scale(1.05); 
 }
 
 .header-logo-nav {
@@ -258,7 +259,8 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
 
 .header-user-modal:hover,
 .header-user-modal:focus {
-    transform: scale(1.05);
+transform: scale(1.05);
+transform: scale(1.05); 
 }
 
 .header-user-modal-out {
