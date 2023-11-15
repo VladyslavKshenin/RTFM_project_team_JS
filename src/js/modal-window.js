@@ -80,7 +80,7 @@ function markupModalWindow(book) {
 
         addBtn = document.querySelector('#js-book-modal-btn');
         console.log('це капець', addBtn);
-        if (addBtn) {
+        if (addBtn.c) {
             addBtn.addEventListener('click', () => {
                 //toggleShoppingList(book);
             });

@@ -1,5 +1,5 @@
 const goTopBtn = document.querySelector(".back-to-top");
-console.log(goTop)
+
 window.addEventListener("scroll", trackScroll);
 goTopBtn.addEventListener("click", goTop);
 

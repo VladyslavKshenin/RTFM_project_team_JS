@@ -269,11 +269,11 @@ body.modal-open {
       padding: 20px 95px;
     }
   }
-  
+/*   
   .js-add::after {
     content: 'Add to shopping list';
   }
   .js-remove::after {
     content: 'Remove from the shopping list';
   }
-  
+   */
