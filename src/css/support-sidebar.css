@@ -79,6 +79,13 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  border: 5px solid rgba(79, 46, 232, 0.30);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.support-arrow:hover,
+.support-arrow:focus {
+  transform: scale(1.05); 
 }
 
 @media only screen and (min-width: 768px) {

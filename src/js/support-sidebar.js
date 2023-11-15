@@ -18,9 +18,6 @@ import sixthImageForRetina from './../images/support/img-6@2x.png';
 import seventhImageForRetina from './../images/support/img-7@2x.png';
 import eightImageForRetina from './../images/support/img-8@2x.png';
 import ninthImageForRetina from './../images/support/img-9@2x.png';
-// import supportCoatOfArms from './../images/icons.svg'; 
-// import supportArrowUp from './../images/icons.svg';
-// import supportArrowDown from './../images/icons.svg';
 import icon from './../images/icons.svg'; 
 
 
@@ -43,51 +40,42 @@ const heading = document.createElement('h2');
 heading.classList.add('support-title');
 heading.textContent = 'Support Ukraine';
 
-
-// const svgCoatOfArms = greateSvg("support-coat-of-arms", 20, 32, supportCoatOfArms, svgPath.coatOfArms);
-// const svgArrowUp = greateSvg("support-button", 12, 20, supportArrowUp, svgPath.arrowUp);
-// const svgArrowDown = greateSvg("support-button", 12, 20, supportArrowDown, svgPath.arrowDown);
-
-const spanArrowUp = document.createElement('span');
-spanArrowUp.classList.add('support-arrow');
-spanArrowUp.classList.add('support-arrow-up');
-spanArrowUp.classList.add('visually-hidden');
-// addElement(spanArrowUp, position.afterbegin, svgArrowUp);
- 
-
-const spanArrowDown = document.createElement('span');
-spanArrowDown.classList.add('support-arrow');
-spanArrowDown.classList.add('support-arrow-down');
-// addElement(spanArrowDown, position.afterbegin, svgArrowDown);
-
-
-const divArrow = document.createElement('div');
-divArrow.classList.add('support-arrow-wrap');
-addElement(divArrow, position.afterbegin, spanArrowUp);
-addElement(divArrow, position.afterbegin, spanArrowDown);
-
-
 const divTitle = document.createElement('div');
 divTitle.classList.add('support-wraper');
 addElement(divTitle, position.afterbegin, heading);
-// addElement(divTitle, position.afterbegin, svgCoatOfArms);
 
+divTitle.insertAdjacentHTML('beforeend',
+  `<svg class="support-coat-of-arms" width="20" height="32">
+    <use href="${icon}${svgPath.coatOfArms}"></use>
+  </svg>`);
 
 const list = document.createElement('ul')
 list.classList.add('support-list');
 list.classList.add('js-support-list');
+ 
+const buttonArrow = document.createElement('button');
+buttonArrow.classList.add('support-arrow');
 
+buttonArrow.insertAdjacentHTML('afterbegin',
+  `<svg class="support-button support-arrow-down" width="12" height="20">
+    <use href="${icon}${svgPath.arrowDown}"></use>
+  </svg>`); 
+
+buttonArrow.insertAdjacentHTML('afterbegin',
+  `<svg class="support-button support-arrow-up visually-hidden" width="20" height="32">
+    <use href="${icon}${svgPath.arrowUp}"></use>
+  </svg>`); 
 
 const divWrap = document.createElement('div');
 divWrap.classList.add('support-container-wrap');
 addElement(divWrap, position.afterbegin, divTitle);
 addElement(divWrap, position.beforeend, list);
-addElement(divWrap, position.beforeend, divArrow);
+addElement(divWrap, position.beforeend, buttonArrow);
 
-// console.log(divWrap)
-// divContainer.append(divWrap)
+divContainer.append(divWrap)
 
 const supportList = document.querySelector('.js-support-list');
+const arrow = document.querySelector('.support-arrow')
 const arrowDown = document.querySelector('.support-arrow-down');
 const arrowUp = document.querySelector('.support-arrow-up');
 
@@ -100,32 +88,26 @@ imagesArr2x.push(firstImageForRetina, secondImageForRetina, thirdImageForRetina,
 getImages(imagesArr, imagesArr2x, supportItems)
 supportList.insertAdjacentHTML('afterbegin', createMarkup(supportItems));
 
-arrowDown.addEventListener('click', handlerDown);
-arrowUp.addEventListener('click', handlerUp);
+arrow.addEventListener('click', handlerClick);
 
-function handlerDown() {
+
+function handlerClick() {
+
   arrowDown.classList.toggle('visually-hidden');
   arrowUp.classList.toggle('visually-hidden');
 
-  for (let i = 0; i < 3; i += 1) {
-    supportList.children[i].classList.add('visually-hidden');
-  }
+  supportList.scroll({
+    top: 170,
+    left: 0,
+    behavior: 'smooth',
+  });
 
-  for (let i = 7; i < 9; i += 1) {
-    supportList.children[i].classList.remove('visually-hidden');
-  }
-}
-
-function handlerUp() {
-  arrowDown.classList.toggle('visually-hidden');
-  arrowUp.classList.toggle('visually-hidden');
-
-  for (let i = 0; i < 3; i += 1) {
-    supportList.children[i].classList.remove('visually-hidden');
-  }
-
-  for (let i = 7; i < 9; i += 1) {
-    supportList.children[i].classList.toggle('visually-hidden');
+  if (arrowUp.classList.contains('visually-hidden')) {
+    supportList.scroll({
+      top: -170,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 }
 
@@ -144,25 +126,6 @@ function addElement(targetElement, position, element) {
   targetElement.insertAdjacentElement(position, element);
 }
 
-// function greateSvg(classElement, width, height, href, path) {
-  
-//   const svg = document.createElement('svg');
-//   svg.classList.add(`${classElement}`);
-//   svg.setAttribute('width', `${width}`);
-//   svg.setAttribute('height', `${height}`);
-
-//   const use = document.createElement('use');
-//   use.setAttribute('href', `${href}${path}`);
-
-//   addElement(svg, position.afterbegin, use);
-
-//   return svg;
-// }
-
-// console.log(createMarkupSvg(icon, svgPath.arrowDown))
-
-function createMarkupSvg(icon, path) {
-  return `<svg class="support-button" width="12" height="20">
-          <use href="${icon}${path}"></use>
-        </svg>`
-}
+    
+    
+    
