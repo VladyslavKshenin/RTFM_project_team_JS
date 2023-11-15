@@ -74,18 +74,6 @@ function currentTheme() {
 currentTheme();
 
 
-
-// const headerNavLinks = document.querySelector('.header-nav-item').querySelectorAll('a');
-// const headerNavLinksModal = document.querySelector('.header-nav-item-modal').querySelectorAll('a');
-// if (document.querySelector('.home-page') === null) {
-//     // for (let index = 0; index < headerNavLinks.length; index++) {
-//     //     headerNavLinks[index].classList.toggle("heder-active");
-//     //     headerNavLinksModal[index].classList.toggle("heder-active");
-//     // }
-// }
-
-
-
 const close = document.querySelector('.js-close-menu');
 
 createMarkupSvg(icon)
