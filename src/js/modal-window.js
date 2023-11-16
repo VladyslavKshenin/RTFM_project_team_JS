@@ -1,193 +1,102 @@
-import icon from '../images/icons.svg';
-import amazon from '../images/modal-window/amazon.png';
-import amazon2x from '../images/modal-window/amazon@2x.png';
-import applebooks from '../images/modal-window/applebooks.png';
-import applebooks2x from '../images/modal-window/applebooks@2x.png';
-import booksApi from './books-api';
+import getRefs from './refs';
+import api from './books-api';
+// import markup from './markup';
 
-const KEY_LOCAL_STORAGE = 'shoppingList';
-const bookCollectionWrapper = document.querySelector(".book-collection-wrapper");
-let backdrop;
-let modalWrapper;
-let addBtn;
+const refs = getRefs();
+const modal = document.getElementById('bookModal');
+const modalTitle = document.getElementById('bookModalTitle');
+const modalBody = document.getElementById('bookModalBody');
+const addToShoppingListBtn = document.getElementById('addToShoppingList');
+const modalCloseBtn = document.querySelector('.close');
+const modalCloseFooterBtn = document.querySelector('.btn-secondary');
 
-bookCollectionWrapper.addEventListener('click', async (event) => {
-    // Перевіряємо, чи клікнуто на .book-link або на його дочірніх елементах
-    const bookElement = event.target.closest('.book-link');
+let shoppingList = [];
 
-    if (bookElement) {
-        event.preventDefault();
-        const bookId = bookElement.dataset.id;
-        // потрібен датасет (дописала локально у markup.js (строка 11 та 43) після href="" data-id="${book._id}">)
-        try {
-            const book = await booksApi.fetchBookById(bookId);
-            markupModalWindow(book);
-        } catch (error) {
-            console.error('Error fetching book details:', error);
-        }
+function openModal(bookId) {
+  api.fetchBookById(bookId).then(book => {
+    modalTitle.innerText = book.title;
+    modalTitle.dataset.bookId = bookId; // Додати dataset для збереження bookId
+    modalBody.innerHTML = `
+      <p><strong>Author:</strong> ${book.author}</p>
+      <p><strong>Description:</strong> ${book.description}</p>
+    `;
+    
+    // Перевірити, чи книга вже є в списку покупок
+    if (shoppingList.includes(bookId)) {
+      addToShoppingListBtn.innerText = 'Remove from Shopping List';
+    } else {
+      addToShoppingListBtn.innerText = 'Add to Shopping List';
     }
+
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden'; // Вимкнути прокручування, коли відкрито вікно
+  });
+}
+
+function closeModal() {
+  modal.classList.remove('show');
+  document.body.style.overflow = ''; // Увімкнути прокручування, коли вікно закрито
+}
+
+function toggleShoppingList(bookId) {
+  console.log('Toggling shopping list for bookId:', bookId);
+
+  if (!bookId) {
+    console.error('Invalid bookId:', bookId);
+    return;
+  }
+
+  const index = shoppingList.indexOf(bookId);
+  if (index === -1) {
+    shoppingList.push(bookId);
+  } else {
+    shoppingList.splice(index, 1);
+  }
+
+  console.log('Updated shoppingList:', shoppingList);
+
+  localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+
+  if (index === -1) {
+    addToShoppingListBtn.innerText = 'Remove from Shopping List';
+  } else {
+    addToShoppingListBtn.innerText = 'Add to Shopping List';
+  }
+}
+
+addToShoppingListBtn.addEventListener('click', () => {
+  const currentBookId = modalTitle.dataset.bookId; // Отримання bookId з dataset
+  toggleShoppingList(currentBookId);
 });
 
-function markupModalWindow(book) {
-    //console.log('Opening modal with book details:', book);
-    // елементи для темного фону та модального вікна
-    backdrop = document.createElement('div');
-    modalWrapper = document.createElement('div');
-    // Додала класи та стилі
-    backdrop.classList.add('backdrop', 'visually-hidden');
-    modalWrapper.classList.add('modal-wrapper', 'visually-hidden');
+modal.addEventListener('click', event => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
 
-    modalWrapper.innerHTML= 
-        `<div class="book-modal">
-            <img src="${book.book_image}" alt="${book.title}" class="book-modal-img"/>
-            <div class="book-modal-details">
-                <h2 class="book-modal-title">${book.title}</h2>
-                <h3 class="book-modal-author">${book.author}</h3>
-                <p class="book-modal-desc">${book.description}</p>
-                <ul class="icon-book-modal-list">
-                    <li>
-                        <a href="${book.buy_links[0].url}" rel="noopener noreferrer nofollow" target="_blank">
-                            <img class="icon-book-modal-amazon" srcset="${amazon} 1x, ${amazon2x} 2x" src="${amazon}" alt="Amazon" loading="lazy"/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${book.buy_links[1].url}" rel="noopener noreferrer nofollow" target="_blank">
-                            <img class="icon-book-modal-ibooks" srcset="${applebooks} 1x, ${applebooks2x} 2x" src="${applebooks}" alt="Apple books" loading="lazy"/>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <button class='book-modal-btn js-add' id='js-book-modal-btn'>Add to shopping list</button>
-            <p class='book-modal-buy'>Congratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
-            <button class='book-modal-close' id='js-book-modal-btn-close'>
-                <svg class='icon-book-modal-close'><use href='${icon}#x-close'></use></svg>
-            </button>
-        </div>`;
-        // Вставляємо створені елементи в тіло документу
-        document.body.appendChild(backdrop);
-        document.body.appendChild(modalWrapper);
-        // Перевірте, чи вже існує екземпляр lightbox
-        backdrop.classList.remove('visually-hidden');
-        modalWrapper.classList.remove('visually-hidden');
-        //Oбробник для закриття модального вікна
-        const closeBtn = document.querySelector('#js-book-modal-btn-close');
-        console.log('вбийте мене', closeBtn)
-        if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
-                closeModaWindow();
-            });
-        }
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});
 
-        addBtn = document.querySelector('#js-book-modal-btn');
-        console.log('це капець', addBtn);
-        if (addBtn.c) {
-            addBtn.addEventListener('click', () => {
-                //toggleShoppingList(book);
-            });
-        }
+refs.bookCollectionWrapper.addEventListener('click', event => {
+  const bookLink = event.target.closest('.book-link');
+  if (bookLink) {
+    event.preventDefault();
+    const bookId = bookLink.dataset.id;
 
-        toggleScrollLock(true); // блокування прокрутки
+    // Виклик функції openModal для відображення модального вікна
+    openModal(bookId);
+  }
+});
 
-        document.addEventListener('keydown', handleKeyPress);
-        backdrop.addEventListener('click', handleBackdropClick);
+// Отримати список покупок із локального сховища
+const savedShoppingList = localStorage.getItem('shoppingList');
+if (savedShoppingList) {
+  shoppingList = JSON.parse(savedShoppingList);
 }
 
-function toggleScrollLock(lock) {
-    if (lock) {
-        document.body.classList.add('modal-open');
-    } else {
-        document.body.classList.remove('modal-open');
-    }
-}
-// Oбробник для кнопки Add to shopping list     
-function handleKeyPress(event) {
-    if (event.key === 'Escape') {
-        closeModaWindow();
-    }
-}
-    
-function handleBackdropClick(event) {
-    if (event.target === backdrop) {
-            closeModaWindow();
-    }
-}
-    
-function closeModaWindow() {
-    backdrop.classList.add('visually-hidden');
-    modalWrapper.classList.add('visually-hidden');
-    toggleScrollLock(false); // розблокування прокрутки
-    document.removeEventListener('keydown', handleKeyPress);
-    backdrop.removeEventListener('click', handleBackdropClick);
-
-    // Видаляємо слухача події з кнопки
-    if (addBtn) {
-        addBtn.removeEventListener('click', handleAddBtnClick);
-    }
-}
-
-function handleAddBtnClick() {
-    toggleShoppingList(book);
-    // Видаляємо слухача події з кнопки після кліку
-    if (addBtn) {
-        addBtn.removeEventListener('click', handleAddBtnClick);
-    }
-}
-
-//Oновлення списку покупок, додавання або видалення книги залежно від її наявності у списку.
-function toggleShoppingList(book) {
-    const shoppingList = getFromLocalStorage();
-    const bookIndex = shoppingList.findIndex(item => item.id === book._id);
-
-    if (bookIndex !== -1) {
-        // Книга вже у shopping list, прибираємо книгу
-        shoppingList.splice(bookIndex, 1);
-    } else {
-        // Додаємо книгу у shopping list
-        shoppingList.push({
-            id: book._id,
-            image: book.book_image,
-            title: book.title,
-            author: book.author,
-            description: book.description,
-            buy_links: book.buy_links,
-            // Перевірити за макетом що ще додати
-        });
-    }
-    // Зберегаємо оновлений shopping list у localStorage
-    saveToLocalStorage(shoppingList);
-    updateTextBtn(book);
-};
-
-
-function getFromLocalStorage() {
-    const shoppingListString = localStorage.getItem(KEY_LOCAL_STORAGE);
-    return shoppingListString ? JSON.parse(shoppingListString) : [];
-};
-
-function saveToLocalStorage(shoppingList) {
-    localStorage.setItem(KEY_LOCAL_STORAGE, JSON.stringify(shoppingList));
-};
-
-
-function updateTextBtn(book) {
-    const textBtn = document.querySelector('#js-book-modal-btn');
-    console.log('updateTextBtn addBtn', textBtn);
-    const buyMessage = document.querySelector('.book-modal-buy');
-    if (textBtn && buyMessage) {
-        const isInShoppingList = isInShoppingList(book);
-        //console.log('updateTextBtn isInShoppingList', isInShoppingList);
-        if (isInShoppingList) {
-            textBtn.textContent = 'Remove from the shopping list';
-            buyMessage.style.display = 'block'; // Відображаємо повідомлення
-        } else {
-            textBtn.textContent = 'Add to shopping list';
-            buyMessage.style.display = 'none'; // Приховуємо повідомлення
-        }
-    }
-};
-
-function isInShoppingList(book) {
-    const shoppingList = getFromLocalStorage();
-    return shoppingList.some(item => item.id === book._id);
-}
-
+modalCloseBtn.addEventListener('click', closeModal);
+modalCloseFooterBtn.addEventListener('click', closeModal);
