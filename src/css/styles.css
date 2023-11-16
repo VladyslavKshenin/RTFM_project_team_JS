@@ -12,6 +12,7 @@
 @import url('./mobile-window.css');
 @import url('./modal-window.css');
 @import url('./support-sidebar.css');
+@import url(./registration.css);
 
 :root {
   /*Font*/
