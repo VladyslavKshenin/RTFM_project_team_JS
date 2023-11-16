@@ -13,8 +13,8 @@
     <!--Custom styles-->
     
     <script type="module" crossorigin src="/RTFM_project_team_JS/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/RTFM_project_team_JS/assets/support-sidebar-d9760ec9.js">
-    <link rel="stylesheet" href="/RTFM_project_team_JS/assets/index-2e2706c9.css">
+    <link rel="modulepreload" crossorigin href="/RTFM_project_team_JS/assets/applebooks@2x-b02de412.js">
+    <link rel="stylesheet" href="/RTFM_project_team_JS/assets/index-3c2ac52f.css">
   </head>
   <body>
     <!-- Header -->
@@ -247,11 +247,14 @@
         <h5 class="modal-title" id="bookModalTitle"></h5>
         <button
           type="button"
-          class="close"
+          class="modal-close"
           data-dismiss="modal"
           aria-label="Close"
         >
-          <span aria-hidden="true">&times;</span>
+          <svg class="book-modal-close" width="20" height="20">
+            <use href="/RTFM_project_team_JS/assets/icons-bb60c522.svg#x-close"></use>
+          </svg>
+          <!-- <span aria-hidden="true">&times;</span> -->
         </button>
       </div>
       <div class="modal-body" id="bookModalBody">
@@ -261,9 +264,9 @@
         <button type="button" class="btn btn-primary" id="addToShoppingList">
           Add to shopping list
         </button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">
           Close
-        </button>
+        </button> -->
       </div>
     </div>
   </div>
