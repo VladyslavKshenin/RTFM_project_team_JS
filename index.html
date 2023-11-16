@@ -13,8 +13,8 @@
     <!--Custom styles-->
     
     <script type="module" crossorigin src="/RTFM_project_team_JS/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/RTFM_project_team_JS/assets/applebooks@2x-b02de412.js">
-    <link rel="stylesheet" href="/RTFM_project_team_JS/assets/index-57ea3e69.css">
+    <link rel="modulepreload" crossorigin href="/RTFM_project_team_JS/assets/support-sidebar-d9760ec9.js">
+    <link rel="stylesheet" href="/RTFM_project_team_JS/assets/index-2e2706c9.css">
   </head>
   <body>
     <!-- Header -->
@@ -207,12 +207,11 @@
 
     <!-- Main Block -->
     <main>
-    
-        <section class="section-position">
-          <div class="container container-positioned">
-            <!-- Sidebar -->
-            <section class="sidebar-home-section">
-              <div class="ctg-sidebar">
+      <section class="section-position">
+        <div class="container container-positioned">
+          <!-- Sidebar -->
+          <section class="sidebar-home-section">
+            <div class="ctg-sidebar">
   <div class="ctg-container">
     <ul class="ctg-list">
       <li class="ctg-item js-ctg-heading ctg-item-active">All categories</li>
@@ -220,7 +219,7 @@
   </div>
 </div>
 
-              <div class="support-container"></div>
+            <div class="support-container"></div>
 <div class="scroll-up-container back-to-top">
   <span class="scroll-up">
     <svg class="scroll-up-icon" width="24" height="24">
@@ -228,20 +227,38 @@
     </svg>
   </span>
 </div>
-            </section>
-            <!-- Content -->
-            <section class="content-home-section">
-              <div class="book-collection-wrapper">
+          </section>
+          <!-- Content -->
+          <section class="content-home-section">
+            <div class="book-collection-wrapper">
   <!-- <div class="selected-ctg-heading">
   <h1 class="selected-ctg-name"></h1>
 </div> 
   -->
 </div>
 
-            </section>
-          </div>
-        </section>
-  
+          </section>
+        </div>
+      </section>
+      <div class="modal" id="bookModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookModalTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="bookModalBody">
+        <!-- Book details will be displayed here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="addToShoppingList">Add to Shopping List</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
     </main>
 
     
