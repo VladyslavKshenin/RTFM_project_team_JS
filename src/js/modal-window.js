@@ -23,9 +23,9 @@ function openModal(bookId) {
     
     // Перевірити, чи книга вже є в списку покупок
     if (shoppingList.includes(bookId)) {
-      addToShoppingListBtn.innerText = 'Remove from Shopping List';
+      addToShoppingListBtn.innerText = 'Remove from the shopping list';
     } else {
-      addToShoppingListBtn.innerText = 'Add to Shopping List';
+      addToShoppingListBtn.innerText = 'Add to shopping list';
     }
 
     modal.classList.add('show');
@@ -58,9 +58,9 @@ function toggleShoppingList(bookId) {
   localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
 
   if (index === -1) {
-    addToShoppingListBtn.innerText = 'Remove from Shopping List';
+    addToShoppingListBtn.innerText = 'Remove from the shopping list';
   } else {
-    addToShoppingListBtn.innerText = 'Add to Shopping List';
+    addToShoppingListBtn.innerText = 'Add to shopping list';
   }
 }
 
