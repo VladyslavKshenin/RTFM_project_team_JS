@@ -27,7 +27,7 @@
 
 .modal-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -38,7 +38,7 @@
 
 .modal-footer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
@@ -46,4 +46,14 @@
     cursor: pointer;
     padding: 10px 20px;
     margin-left: 10px;
+}
+.modal-title{
+    display: none;
+}
+.book-modal-close{
+    stroke: var(--black);
+}
+.modal-close{
+    border: none;
+    background-color: var(--white);
 }

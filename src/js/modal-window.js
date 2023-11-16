@@ -1,14 +1,18 @@
 import getRefs from './refs';
 import api from './books-api';
 // import markup from './markup';
+import amazon from '../images/modal-window/amazon.png';
+import amazon2x from '../images/modal-window/amazon@2x.png';
+import applebooks from '../images/modal-window/applebooks.png';
+import applebooks2x from '../images/modal-window/applebooks@2x.png';
 
 const refs = getRefs();
 const modal = document.getElementById('bookModal');
 const modalTitle = document.getElementById('bookModalTitle');
 const modalBody = document.getElementById('bookModalBody');
 const addToShoppingListBtn = document.getElementById('addToShoppingList');
-const modalCloseBtn = document.querySelector('.close');
-const modalCloseFooterBtn = document.querySelector('.btn-secondary');
+const modalCloseBtn = document.querySelector('.modal-close');
+// const modalCloseFooterBtn = document.querySelector('.btn-secondary');
 
 let shoppingList = [];
 
@@ -16,9 +20,24 @@ function openModal(bookId) {
   api.fetchBookById(bookId).then(book => {
     modalTitle.innerText = book.title;
     modalTitle.dataset.bookId = bookId; // Додати dataset для збереження bookId
-    modalBody.innerHTML = `
-      <p><strong>Author:</strong> ${book.author}</p>
-      <p><strong>Description:</strong> ${book.description}</p>
+    modalBody.innerHTML = `<img src="${book.book_image}" alt="${book.title}" class="book-modal-img"/>
+            <div class="book-modal-details">
+                <h2 class="book-modal-title">${book.title}</h2>
+                <h3 class="book-modal-author">${book.author}</h3>
+                <p class="book-modal-desc">${book.description}</p>
+                <ul class="icon-book-modal-list">
+                    <li>
+                        <a href="${book.buy_links[0].url}" rel="noopener noreferrer nofollow" target="_blank">
+                            <img class="icon-book-modal-amazon" srcset="${amazon} 1x, ${amazon2x} 2x" src="${amazon}" alt="Amazon" loading="lazy"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="${book.buy_links[1].url}" rel="noopener noreferrer nofollow" target="_blank">
+                            <img class="icon-book-modal-ibooks" srcset="${applebooks} 1x, ${applebooks2x} 2x" src="${applebooks}" alt="Apple books" loading="lazy"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
     `;
     
     // Перевірити, чи книга вже є в списку покупок
@@ -99,4 +118,4 @@ if (savedShoppingList) {
 }
 
 modalCloseBtn.addEventListener('click', closeModal);
-modalCloseFooterBtn.addEventListener('click', closeModal);
+// modalCloseFooterBtn.addEventListener('click', closeModal);
