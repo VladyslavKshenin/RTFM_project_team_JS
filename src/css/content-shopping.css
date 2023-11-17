@@ -197,8 +197,12 @@
     line-height: 128%;
     letter-spacing: -0.56px;
 
-    height: 48px;
+    min-width: 208px;
+    height: 55px;
 
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
@@ -207,6 +211,14 @@
 @media only screen and (min-width: 768px) {
     .shopping-list-card-desc {
         height: 86px;
+        min-width: 520px;
+        -webkit-line-clamp: 5; 
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .shopping-list-card-desc {
+        min-width: 796px;
     }
 }
 
