@@ -167,6 +167,14 @@
     letter-spacing: -0.64px;
     text-transform: uppercase;
 
+
+    display: -webkit-box;
+    min-width: 100px;
+    margin-right: 40px;
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin-bottom: 4px;
 }
 
@@ -179,6 +187,13 @@
     line-height: 116%;
     letter-spacing: 0.36px;
 
+    display: -webkit-box;
+    min-width: 160px;
+    margin-right: 40px;
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin-bottom: 8px;
 }
 
@@ -198,8 +213,11 @@
     letter-spacing: -0.56px;
 
     min-width: 208px;
-    height: 48px;
+    height: 55px;
 
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
@@ -209,6 +227,7 @@
     .shopping-list-card-desc {
         height: 86px;
         min-width: 520px;
+        -webkit-line-clamp: 5; 
     }
 }
 
@@ -227,6 +246,7 @@
 .shopping-list-card-container-img {
     display: flex;
     gap: 8px;
+    min-width: 56px;
     align-items: center;
 }
 
@@ -294,6 +314,12 @@
     font-weight: 400;
     line-height: 116%;
     letter-spacing: -0.48px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .shopping-list-card-container-trash {
