@@ -188,6 +188,10 @@
 
 .modal-footer {
     display: flex;
+<<<<<<< Updated upstream
+=======
+    flex-direction: column;
+>>>>>>> Stashed changes
     justify-content: center;
     align-items: center;
 }
@@ -223,6 +227,28 @@
     background: #202024;
 }
 
+<<<<<<< Updated upstream
+=======
+.modal-footer-text {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 242px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: rgba(17, 17, 17, 0.5);
+}
+
+.dark-theme .modal-footer-text {
+    color: rgba(255, 255, 255, 0.50);
+}
+
+>>>>>>> Stashed changes
 @media screen and (min-width: 768px){
     .modal-dialog {
         width: 579px;
@@ -238,7 +264,10 @@
         max-width: 192px;
         height: 281px;
         margin-right: 24px;
+<<<<<<< Updated upstream
         margin-bottom: 40px;
+=======
+>>>>>>> Stashed changes
     }
 
     .book-modal-details {
@@ -267,4 +296,16 @@
         line-height: 24px;
         width: 499px;
     }
+<<<<<<< Updated upstream
 }
+=======
+
+    .modal-footer-text {
+        width: 324px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+
+>>>>>>> Stashed changes

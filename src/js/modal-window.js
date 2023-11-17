@@ -13,6 +13,7 @@ const modalBody = document.getElementById('bookModalBody');
 const addToShoppingListBtn = document.getElementById('addToShoppingList');
 const modalCloseBtn = document.querySelector('.modal-close');
 // const modalCloseFooterBtn = document.querySelector('.btn-secondary');
+const addTextModalFooter = document.getElementById('modalFooterText');
 
 let shoppingList = [];
 let shoppingCard = [];
@@ -91,8 +92,10 @@ function toggleShoppingList(bookId) {
 
   if (index === -1) {
     addToShoppingListBtn.innerText = 'Remove from the shopping list';
+    addTextModalFooter.style.display = 'block';
   } else {
     addToShoppingListBtn.innerText = 'Add to shopping list';
+    addTextModalFooter.style.display = 'none';
   }
 }
 
