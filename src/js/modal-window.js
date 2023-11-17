@@ -53,8 +53,10 @@ function openModal(bookId) {
     // Перевірити, чи книга вже є в списку покупок
     if (shoppingList.includes(bookId)) {
       addToShoppingListBtn.innerText = 'Remove from the shopping list';
+      addTextModalFooter.style.display = 'block';
     } else {
       addToShoppingListBtn.innerText = 'Add to shopping list';
+      addTextModalFooter.style.display = 'none';
     }
 
     modal.classList.add('show');
