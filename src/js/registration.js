@@ -26,6 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const registrationForm = document.getElementById('registrationForm');
         const closeIcon = document.querySelector('.close-icon');
 
+        if (!closeIcon) {
+          console.error('Close icon not found');
+          return;
+        }
+
         registrationForm.addEventListener('submit', function (event) {
           event.preventDefault();
 
@@ -34,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const password = document.getElementById('password').value;
 
           if (name && email && password) {
-            // console.log('User data:', { name, email, password });
+            console.log('User data:', { name, email, password });
 
             const userData = { name, email, password };
             localStorage.setItem('userData', JSON.stringify(userData));
