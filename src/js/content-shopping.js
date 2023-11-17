@@ -11,6 +11,7 @@ const KEY_LOCAL_STORAGE = "shoppingCard";//сюди треба ключ з ве�
 const KEY_LOCAL_STORAGE_ID = "shoppingList";
 const shopEl = document.querySelector(".js-shopping-list");
 const shopContainerEl = document.querySelector('.shopping-list-container');
+const descEmpty = "The daughter of a Korean mother and Jewish American father, and leader of the indie rock project Japanese Breakfast, describes creating her own identity after losing her mother to cancer.";
 const readyCard = parseStorage(KEY_LOCAL_STORAGE);
 const numberCard = parseStorage(KEY_LOCAL_STORAGE_ID);
 if (readyCard[0] !== undefined) {
@@ -47,10 +48,12 @@ else{
     return;
 }
 }
-
 function funCreateCard(readyCard) {
   return readyCard
     .map(({  book_image,title,author,description,amazonLinks, appleLinks }, index) => {
+      if(!description){
+        description=descEmpty;
+      }
       return `<li class="shopping-list-item">
       <img class="shopping-list-card-img" src="${book_image}" alt="${title}">
       <div class="shopping-list-card-container">
