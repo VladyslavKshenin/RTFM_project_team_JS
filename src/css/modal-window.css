@@ -219,6 +219,11 @@
     background-color: var(--violet);
 }
 
+.btn-primary:not(:hover) {
+    color: var(--black);
+    background-color: var(--white);
+}
+
 .dark-theme .btn-primary {
     color: var(--white);
     background: #202024;
