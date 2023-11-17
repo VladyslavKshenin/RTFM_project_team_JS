@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.body.appendChild(errorMessageElement);
 
   function openRegistrationModal() {
-    fetch('./partials/registration.html')
+    fetch('../partials/registration.html')
       .then(response => response.text())
       .then(html => {
         const registrationModalContainer = document.getElementById(
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const password = document.getElementById('password').value;
 
           if (name && email && password) {
-            // console.log('User data:', { name, email, password });
+            console.log('User data:', { name, email, password });
 
             const userData = { name, email, password };
             localStorage.setItem('userData', JSON.stringify(userData));
@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Error loading registration content:', error)
       );
   }
-
   function closeRegistrationModal() {
     const registrationModalContainer = document.getElementById(
       'registrationModalContainer'
