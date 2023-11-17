@@ -26,11 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const registrationForm = document.getElementById('registrationForm');
         const closeIcon = document.querySelector('.close-icon');
 
-        if (!closeIcon) {
-          console.error('Close icon not found');
-          return;
-        }
-
         registrationForm.addEventListener('submit', function (event) {
           event.preventDefault();
 
