@@ -50,11 +50,20 @@
     margin-left: 10px;
 }
 
-.book-modal-close{
+.book-modal-close {
     stroke: var(--black);
     position: absolute;
     background-color: transparent;
     border: none;
+    margin-left: -2px;
+    margin-top: -4px;
+}
+
+@media screen and (min-width: 768px) {
+    .book-modal-close {
+        margin-left: -14px;
+        margin-top: 8px;
+    }
 }
 
 .book-modal-close:hover,
