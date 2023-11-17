@@ -87,9 +87,9 @@
 }
 /* Tablet styles */
 @media screen and (min-width: 768px) {
-  .ctg-list {
-    /* gap: 32px; */
-  }
+  /* .ctg-list {
+    gap: 32px;
+  } */
 }
 
 ::-webkit-scrollbar {
@@ -100,7 +100,7 @@
   border-radius: 12px;
   background: #e0e0e0;
 }
-::-webkit-scrollbar-track-piece:end {
+::-webkit-scrollbar-track-piece {
   background: transparent;
   margin-bottom: 100px;
 }

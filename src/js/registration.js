@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const password = document.getElementById('password').value;
 
           if (name && email && password) {
-            console.log('User data:', { name, email, password });
+            // console.log('User data:', { name, email, password });
 
             const userData = { name, email, password };
             localStorage.setItem('userData', JSON.stringify(userData));

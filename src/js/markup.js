@@ -87,14 +87,14 @@ function cleanBookCollection() {
 }
 
 function renderTopBooks(books) {
-  console.log(books);
+  // console.log(books);
   cleanBookCollection();
   books.forEach(insertCategoryBlocks);
   insertTopBooksHeader();
 }
 
 function renderCategoryBooks(books) {
-  console.log(books);
+  // console.log(books);
   cleanBookCollection();
   insertCategoryCollection(books);
   insertCategoryBooksHeader(books);

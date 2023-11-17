@@ -70,7 +70,7 @@ function closeModal() {
 }
 
 function toggleShoppingList(bookId) {
-  console.log('Toggling shopping list for bookId:', bookId);
+  // console.log('Toggling shopping list for bookId:', bookId);
 
   if (!bookId) {
     console.error('Invalid bookId:', bookId);
@@ -86,7 +86,7 @@ function toggleShoppingList(bookId) {
     shoppingCard.splice(index,1);
   }
 
-  console.log('Updated shoppingList:', shoppingList);
+  // console.log('Updated shoppingList:', shoppingList);
 
   localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
   localStorage.setItem('shoppingCard',JSON.stringify(shoppingCard));
