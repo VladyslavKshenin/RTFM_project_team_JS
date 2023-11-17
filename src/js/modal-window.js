@@ -15,10 +15,19 @@ const modalCloseBtn = document.querySelector('.modal-close');
 // const modalCloseFooterBtn = document.querySelector('.btn-secondary');
 
 let shoppingList = [];
-
+let shoppingCard = [];
+let firstCard = {};
 function openModal(bookId) {
   api.fetchBookById(bookId).then(book => {
     modalTitle.innerText = book.title;
+    firstCard = {
+      book_image: book.book_image,
+      title: book.title,
+      author: book.author,
+      description: book.description,
+      amazonLinks: book.buy_links[0].url,
+      appleLinks: book.buy_links[1].url,
+    };
     modalTitle.dataset.bookId = bookId; // Додати dataset для збереження bookId
     modalBody.innerHTML = `<img src="${book.book_image}" alt="${book.title}" class="book-modal-img"/>
             <div class="book-modal-details">
@@ -68,13 +77,17 @@ function toggleShoppingList(bookId) {
   const index = shoppingList.indexOf(bookId);
   if (index === -1) {
     shoppingList.push(bookId);
+    shoppingCard.push(firstCard);
   } else {
     shoppingList.splice(index, 1);
+    shoppingCard.splice(index,1);
   }
 
   console.log('Updated shoppingList:', shoppingList);
 
   localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+  localStorage.setItem('shoppingCard',JSON.stringify(shoppingCard));
+
 
   if (index === -1) {
     addToShoppingListBtn.innerText = 'Remove from the shopping list';
@@ -113,8 +126,12 @@ refs.bookCollectionWrapper.addEventListener('click', event => {
 
 // Отримати список покупок із локального сховища
 const savedShoppingList = localStorage.getItem('shoppingList');
+const savedShoppingCard = localStorage.getItem('shoppingCard'); 
 if (savedShoppingList) {
   shoppingList = JSON.parse(savedShoppingList);
+}
+if (savedShoppingCard) {
+  shoppingCard = JSON.parse(savedShoppingCard);
 }
 
 modalCloseBtn.addEventListener('click', closeModal);
