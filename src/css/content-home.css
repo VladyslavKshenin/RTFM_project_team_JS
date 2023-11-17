@@ -2,6 +2,10 @@
 /*   HOME TOP BOOKS STYLES   */
 /*                           */
 
+.book-collection-wrapper {
+  position: relative;
+}
+
 @media only screen and (min-width: 1440px) {
   .book-collection-wrapper {
     max-width: 1036px;
@@ -139,7 +143,7 @@
 
 .book-img-wrapper:hover {
   transform: scale(1.035, 1.035);
-  box-shadow: 0 15px 30px rgba(79, 46, 232, 0.2);;
+  box-shadow: 0 15px 30px rgba(79, 46, 232, 0.2);
 }
 
 .book-img-wrapper img {
@@ -230,4 +234,54 @@
   background-color: var(--violet);
   color: var(--white);
   transform: scale(1.05);
+}
+
+.dots-bars {
+  width: 80px;
+  height: 60px;
+  --c: linear-gradient(var(--violet) 18.03%, var(--white) 100%);
+  background: var(--c) 0 100%/16px 60px, var(--c) 50% 100%/16px 40px,
+    var(--c) 100% 100%/16px 20px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: inset(-100% 0);
+}
+
+.dots-bars:before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--violet);
+  left: -32px;
+  top: 0;
+  animation: db-1 2s linear infinite,
+    db-2 0.5s cubic-bezier(0, 200, 0.8, 200) infinite;
+}
+
+@keyframes db-1 {
+  0% {
+    left: -32px;
+    transform: translateY(-32px);
+  }
+  100% {
+    left: calc(100% + 16px);
+    transform: translateY(44px);
+  }
+}
+
+@keyframes db-2 {
+  100% {
+    top: -0.1px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .dots-bars {
+    transform: translate(580%, 400%);
+  }
 }
