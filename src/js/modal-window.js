@@ -17,9 +17,13 @@ const modalCloseBtn = document.querySelector('.modal-close');
 let shoppingList = [];
 let shoppingCard = [];
 let firstCard = {};
+const descEmpty = 'The Duke of Sussex details his struggles with the royal family, loss of his mother, service in the British Army and marriage to Meghan Markle. Read by the author. 15 hours, 39 minutes unabridged.';
 function openModal(bookId) {
   api.fetchBookById(bookId).then(book => {
     modalTitle.innerText = book.title;
+    if(!book.description){
+      book.description=descEmpty;
+    }
     firstCard = {
       book_image: book.book_image,
       title: book.title,
