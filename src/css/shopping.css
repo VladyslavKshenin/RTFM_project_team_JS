@@ -97,3 +97,46 @@
         padding: 0 32px;
     }
 }
+/**
+  |============================
+  | for header aktive btn
+  |============================
+*/
+.heder-active-shopping {
+    background-color: rgba(234, 198, 69, 1);
+}
+.dark-theme .heder-active-shopping {
+    color: var(--black);
+}
+
+body {
+    background-color: var(--background-body-light);
+    color: var(--black);
+    font-family: DM Sans;
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
+}
+
+.section-position {
+    padding-top: 40px;
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .container-positioned {
+        display: flex;
+        gap: 40px;
+        justify-content: start;
+    }
+}
+
+.shopping-sidebar-section {
+    display: none;
+}
+
+@media only screen and (min-width: 1440px) {
+    .shopping-sidebar-section {
+        display: block;
+    }
+}

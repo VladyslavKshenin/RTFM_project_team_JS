@@ -88,6 +88,7 @@ function toggleShoppingList(bookId) {
   localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
   localStorage.setItem('shoppingCard',JSON.stringify(shoppingCard));
 
+
   if (index === -1) {
     addToShoppingListBtn.innerText = 'Remove from the shopping list';
   } else {
@@ -132,5 +133,6 @@ if (savedShoppingList) {
 if (savedShoppingCard) {
   shoppingCard = JSON.parse(savedShoppingCard);
 }
+
 modalCloseBtn.addEventListener('click', closeModal);
 // modalCloseFooterBtn.addEventListener('click', closeModal);

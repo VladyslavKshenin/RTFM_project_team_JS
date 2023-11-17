@@ -12,6 +12,7 @@
 @import url('./mobile-window.css');
 @import url('./modal-window.css');
 @import url('./support-sidebar.css');
+@import url(./registration.css);
 
 :root {
   /*Font*/
@@ -98,10 +99,21 @@
 /*  desktop screen */
 @media only screen and (min-width: 1440px) {
   .container {
-    display: flex;
     max-width: 1440px;
     padding: 0 24px;
   }
+}
+/**
+  |============================
+  | for header aktive btn
+  |============================
+*/
+.heder-active {
+  background-color: rgba(234, 198, 69, 1);
+  
+}
+.dark-theme .heder-active {
+  color: var(--black);
 }
 
 body {
@@ -111,4 +123,56 @@ body {
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.56px;
+  position: relative;
 }
+
+.section-position {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.ctg-sidebar {
+  margin-bottom: 40px;
+}
+
+.sidebar-home-section {
+  padding-bottom: 80px;
+}
+
+@media only screen and (min-width: 768px) {
+  .sidebar-home-section {
+    display: flex;
+    gap: 32px;
+    padding-bottom: 100px;
+  }
+
+  .ctg-sidebar {
+    margin-bottom: 0px;
+  }
+
+  .sidebar-home-section {
+    padding-bottom: 100px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .sidebar-home-section {
+    display: block;
+    margin-bottom: 0px;
+  }
+
+  .ctg-sidebar {
+    margin-bottom: 86px;
+  }
+
+  .container-positioned {
+    display: flex;
+    gap: 40px;
+    justify-content: start;
+  }
+  
+  .sidebar-home-section {
+    padding-bottom: 72px;
+  }
+}
+

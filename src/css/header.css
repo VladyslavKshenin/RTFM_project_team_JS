@@ -16,6 +16,7 @@
 
 .header-mobile-burger {
     background-color: transparent;
+    border: none;
 }
 
 .header-container {
@@ -116,9 +117,9 @@
     font-weight: 700;
 }
 
-.heder-active {
+/* .heder-active {
     background-color: rgba(234, 198, 69, 1);
-}
+} */
 
 .header-item {
     border-radius: 36px;
@@ -151,6 +152,12 @@
     padding: 14px 15px;
     border: 1.5px solid #111111;
     border-radius: 18px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-user:hover,
+.header-user:focus {
+    transform: scale(1.05); 
 }
 
 .header-logo-nav {
@@ -158,15 +165,9 @@
     align-items: center;
 }
 
-.header-mobile-menu-icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
+.icon-close {
+    stroke: #111111;
 }
-
 
 
 @keyframes slide-down {
@@ -185,7 +186,7 @@
 
 .header-modal {
     position: absolute;
-    top: -45px;
+    top: -58px;
     right: -20.5px;
     width: 100%;
     width: 375px;
@@ -205,6 +206,7 @@
     align-items: flex-start;
     border-top: 1.5px solid #111111;
 }
+
 
 .header-modal-image {
     background-image: url(../images/RTFM.png);
@@ -228,7 +230,7 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
 
 .menu-toggle-close {
     position: absolute;
-    top: -39px;
+    top: -54px;
     right: 20px;
     background-color: transparent;
     border: none;
@@ -251,6 +253,12 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
     left: 20px;
     position: absolute;
     align-items: center;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-user-modal:hover,
+.header-user-modal:focus {
+    transform: scale(1.05); 
 }
 
 .header-user-modal-out {
@@ -337,6 +345,8 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
 .header-box {
     display: flex;
     justify-content: space-between;
+    height: 72px;
+    align-items: center;
 }
 
 .label-them {
@@ -530,6 +540,7 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
     border: 1.5px solid #111111;
     border-radius: 18px;
 }
+
 /* light-dark theme */
 .header-logo-container {
     display: flex;
@@ -539,12 +550,13 @@ body.dark-theme,
 .dark-theme .modal-fav,
 .dark-theme .heder-modal-autoriz {
     background-color: #202024;
-    
+
 }
 
 .dark-theme .header-container {
     background: #111111;
-   
+    border: 1.5px solid #FFF;
+
 }
 
 .dark-theme .label-them {
@@ -573,7 +585,7 @@ body.dark-theme,
 .dark-theme .header-item-icon,
 .dark-theme .header-logo-icon {
     fill: #FFFFFF;
-    
+
 }
 
 .dark-theme .nav-category-item.active,
@@ -592,7 +604,10 @@ body.dark-theme,
     color: #FFFFFF;
 }
 
-.dark-theme .header-mobile-menu-icon,
+.dark-theme .icon-close {
+    stroke: var(--white);
+}
+
 .dark-theme .header-burger-icon {
     fill: #FFFFFF;
     stroke: #FFFFFF;
@@ -647,6 +662,54 @@ body.dark-theme,
     color: #111111;
 }
 
+/**
+  |============================
+  | Style for conten home dark
+  |============================
+*/
 .dark-theme .header-form-link {
     color: rgba(246, 246, 246, 0.5);
 }
+
+.dark-theme .ctg-item {
+    color: rgba(255, 255, 255, 0.60);
+}
+
+.dark-theme .books-header {
+    color: var(--white);
+}
+
+.dark-theme .book-title {
+    color: var(--white);
+}
+
+.dark-theme .top-books-button {
+    color: var(--white);
+}
+
+.dark-theme .ctg-item-active {
+    color: var(--yellow);
+}
+.dark-theme .ctg-item:hover {
+    color: var(--yellow);
+}
+.dark-theme  ::-webkit-scrollbar-thumb {
+     background: rgba(17, 17, 17, 0.60);
+ }
+ /**
+   |============================
+   | Style for conten shoping list dark
+   |============================
+ */
+ .dark-theme .shopping-list-title {
+    color: var(--white);
+ }
+ .dark-theme .shopping-list-item {
+    background-color: var(--black);
+ }
+ .dark-theme .shopping-list-card-desc{
+    color: var(--white);
+ }
+ .dark-theme .shopping-list-card-title {
+    color: var(--white);
+ }

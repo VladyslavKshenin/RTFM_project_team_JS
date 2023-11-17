@@ -4,17 +4,18 @@ const refs = getRefs();
 
 // top books (bestsellers) and category books collection rendering functions
 
-function markupCategoryBlock(category) {
-  const bookCard = category.books
-    .map(
-      book => `<li class="top-book-card">
-            <a class="book-link" href="">
-              <img class="book-img"
-                src="${book.book_image}"
-                alt="book image"
-                width="100%"
-                loading="lazy"
-              />
+function markupBookCard(book, cardClass) {
+  return `<li class="${cardClass}">
+            <a class="book-link" href="" data-id="${book._id}">
+              <div class="book-img-wrapper">
+                <img class="book-img"
+                  src="${book.book_image}"
+                  alt="book image"
+                  width="100%"
+                  loading="lazy"
+                />
+                <p class="book-img-overlay">quick view</p>
+              </div>
               <div class="book-info">
                 <h3 class="book-title">
                   ${book.title}
@@ -24,40 +25,25 @@ function markupCategoryBlock(category) {
                 </p>
               </div>
             </a>
-          </li>`
-    )
+          </li>`;
+}
+
+function markupCategoryBlock(category) {
+  const bookCard = category.books
+    .map(book => markupBookCard(book, 'top-book-card'))
     .join('');
   return `<div class="top-books-block">
             <h2 class="top-books-category-header">${category.list_name}</h2>
             <ul class="top-books-category">
             ${bookCard}
             </ul>
-            <button class="top-books-button" type="button">see more</button>
+            <button class="top-books-button" type="button" data-category="${category.list_name}">see more</button>
           </div>`;
 }
 
 function markupCategoryCollection(books) {
   const bookCard = books
-    .map(
-      book => `<li class="category-book-card">
-            <a class="book-link" href="">
-              <img class="book-img"
-                src="${book.book_image}"
-                alt="book image"
-                width="100%"
-                loading="lazy"
-              />
-              <div class="book-info">
-                <h3 class="book-title">
-                  ${book.title}
-                </h3>
-                <p class="book-author">
-                  ${book.author}
-                </p>
-              </div>
-            </a>
-          </li>`
-    )
+    .map(book => markupBookCard(book, 'category-book-card'))
     .join('');
   return `<ul class="category-books">
             ${bookCard}
@@ -120,14 +106,14 @@ export function createMarkup(arr) {
     .map(
       ({ id, title, url, img, img2x }) => `
         <li class="support-items">
-            <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
-                <span>0${id}</span>
-                <img class="support-img" src="${img}" alt="${title}" srcset="${img} 1x, ${img2x} 2x" height="32">
-            </a>
+          <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
+            <span>0${id}</span>
+            <img class="support-img" src="${img}" srcset="${img} 1x, ${img2x} 2x"  alt="${title}" >
+          </a>
         </li>
         `
     )
     .join('');
 }
 
-export default { renderTopBooks, renderCategoryBooks };
+export default { renderTopBooks, renderCategoryBooks, insertCategoryBlocks };
